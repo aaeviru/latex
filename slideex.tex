@@ -1,5 +1,6 @@
 \documentclass{beamer}
 \setbeamertemplate{bibliography item}[text]
+\usepackage[absolute,overlay]{textpos}
 
 \title{\bfseries Private Information Retrieval}
 %\subtitle{\bfseries ─ 講演用スライド作成のために ─}
@@ -15,6 +16,14 @@
 
 \begin{frame}
 aaa \cite{heurix_taxonomy_2015}
+\end{frame}
+\begin{frame}
+	\begin{textblock*}{0.4\linewidth}(100pt, 100pt)
+    		\begin{figure}
+        		\centering
+        		\includegraphics[width=0.8\linewidth,bb=0 0 460 460]{./output.pdf}
+    		\end{figure}
+	\end{textblock*}
 \end{frame}
 \begin{frame}[t,allowframebreaks]{Bibliography}
 \bibliographystyle{siam}

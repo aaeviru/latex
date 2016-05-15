@@ -1,47 +1,46 @@
-This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ex1.aux
-The style file: jplain.bst
+The style file: plain.bst
 Database file #1: zotero.bib
 You've used 1 entry,
-            2620 wiz_defined-function locations,
-            599 strings with 4703 characters,
-and the built_in function-call counts, 511 in all, are:
-= -- 43
-> -- 22
-< -- 2
+            2118 wiz_defined-function locations,
+            504 strings with 4158 characters,
+and the built_in function-call counts, 385 in all, are:
+= -- 36
+> -- 23
+< -- 0
 + -- 10
 - -- 8
-* -- 34
-:= -- 78
+* -- 31
+:= -- 73
 add.period$ -- 3
 call.type$ -- 1
 change.case$ -- 7
 chr.to.int$ -- 0
 cite$ -- 1
-duplicate$ -- 23
-empty$ -- 36
-format.name$ -- 12
-if$ -- 111
+duplicate$ -- 11
+empty$ -- 24
+format.name$ -- 8
+if$ -- 72
 int.to.chr$ -- 0
 int.to.str$ -- 1
 missing$ -- 1
 newline$ -- 8
 num.names$ -- 2
-pop$ -- 8
+pop$ -- 5
 preamble$ -- 1
 purify$ -- 6
 quote$ -- 0
-skip$ -- 22
+skip$ -- 7
 stack$ -- 0
-substring$ -- 25
-swap$ -- 7
-text.length$ -- 2
+substring$ -- 22
+swap$ -- 1
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 4
 warning$ -- 0
-while$ -- 5
+while$ -- 4
 width$ -- 2
 write$ -- 13
-is.kanji.str$ -- 13
