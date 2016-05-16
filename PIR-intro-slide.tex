@@ -65,24 +65,85 @@
 \frame{\tableofcontents[hideallsubsections]}
 
 \section{背景}
-\begin{frame}
+\begin{frame}{Private Information Retrieval}
+
+\begin{columns}[t]
+    \begin{column}{0.8\textwidth} % 横幅の30％
+      	\includegraphics[width=\columnwidth]{photo1.png}
+    \end{column}
+\end{columns}
+	\begin{block}{}
+	\begin{itemize}
+    	\item Q:検索質問
+		\item R(Q):質問Qの検索結果
+	\end{itemize}
+	\end{block}
 \end{frame}
 
-\subsection{Location vs Keyword}
 \begin{frame}{Location vs Keyword}
+	\begin{block}{}
+		\begin{itemize}
+		\item Location
+			\begin{itemize}
+			\item 地図
+			\item 乗換案内
+			\item 近くのラストラン
+			\end{itemize}
+		\end{itemize}
+        \begin{itemize}
+        \item Keyword
+            \begin{itemize}
+            \item ウェブ検索
+            \item データベース検索
+            \item クラウドストア検索
+            \end{itemize}
+        \end{itemize}
+	\end{block}
 \end{frame}
+
 \begin{frame}{AOL 事件}
+	\begin{exampleblock}{AOL質問ログ}
+	\fontsize{7pt}{7.2}\selectfont
+	\begin{tabular}{ccccc}
+	\noalign{\hrule height 1pt}
+	AnonID & Query & QueryTime & ItemRank & ClickURL \\
+	\hline
+	4417749 & care packages & 2006-03-02 09:19:32 & 10 & http://booksforsoldiers.com \\
+ 	4417749 & care packages & 2006-03-02 09:19:32 & 9 & http://www.brandonblog.com \\
+	4417749 & movies for dogs & 2006-03-02 09:24:14 & & \\		
+	4417749 & blue book & 2006-03-03 11:48:52 & 1 & http://www.kbb.com \\
+	4417749 & best dog for older owner & 2006-03-06 11:48:24 & 1 & http://www.canismajor.com \\
+	4417749 & best dog for older owner & 2006-03-06 11:48:24 & 5 & http://dogs.about.com \\
+	\noalign{\hrule height 1pt}
+	\end{tabular}
+	\end{exampleblock}
+	\begin{block}{}
+	\begin{itemize}
+		\item 2006年8月4日、AOL(American OnLine)が650,000人以上のユーザーの匿名化された検索質問ログを研究目的でリリースした。\pause
+		\item 2006年8月9日、ID 4417749の名前、年齢、住所などが特定された。\cite{AOL}
+	\end{itemize}
+	\end{block}
 \end{frame}
+
 \begin{frame}
 \end{frame}
 
 \section{守り方}
 \begin{frame}{Anonymity}
+\begin{columns}[t]
+    \begin{column}{0.8\textwidth} % 横幅の30％
+        \includegraphics[width=\columnwidth]{photo2.png}
+    \end{column}
+\end{columns}
+
 \end{frame}
 \begin{frame}{Obfuscation}
 \end{frame}
 \begin{frame}{PIR}
 \end{frame}
+\begin{frame}{Obfuscation + PIR}
+\end{frame}
+
 
 \section{攻撃方}
 \begin{frame}
@@ -93,17 +154,6 @@
 \end{frame}
 
 
-\begin{frame}
-aaa \cite{heurix_taxonomy_2015}
-\end{frame}
-\begin{frame}
-	\begin{textblock*}{0.4\linewidth}(100pt, 100pt)
-    		\begin{figure}
-        		\centering
-        		\includegraphics[width=0.8\linewidth,bb=0 0 460 460]{./output.pdf}
-    		\end{figure}
-	\end{textblock*}
-\end{frame}
 \begin{frame}[t,allowframebreaks]{Bibliography}
 \bibliographystyle{siam}
 \bibliography{zotero}
