@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{背景}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Location vs Keyword}{5}{0}{1}
+\beamer@sectionintoc {2}{守り方}{8}{0}{2}
+\beamer@sectionintoc {3}{攻撃方}{12}{0}{3}
