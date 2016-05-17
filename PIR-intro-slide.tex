@@ -2,7 +2,7 @@
 
 \setbeamertemplate{bibliography item}[text]
 \usepackage[absolute,overlay]{textpos}
-
+\usepackage{apalike}
 \usetheme{Boadilla}
 
 \usepackage{txfonts} % TXフォント
@@ -40,6 +40,15 @@
     \definecolor{BackGroundGray}{RGB}{254,254,254}
     \setbeamercolor{background canvas}{bg=BackGroundGray} % スライドモードのみ背景をわずかにグレーにする
 }
+
+% Algorithm系
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\algsetup{linenosize=\color{fg!50}\footnotesize}
+\renewcommand\algorithmicdo{:}
+\renewcommand\algorithmicthen{:}
+\renewcommand\algorithmicrequire{\textbf{Input:}}
+\renewcommand\algorithmicensure{\textbf{Output:}}
 
 %フラットデザイン化
 \setbeamertemplate{blocks}[rounded] % Blockの影を消す
@@ -125,21 +134,223 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Location vs Keyword}
+	\begin{columns}[c]
+		\begin{column}{0.3\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{photo8.png}
+		\end{column}
+		\begin{column}{0.3\textwidth} % 横幅の30％
+		\begin{center}
+			猫　？　犬
+		\end{center}
+		\end{column}
+	\end{columns}
+    \begin{block}{}
+    \begin{itemize}
+		\item 位置間の距離は簡単に計算できるが、\\ 単語間の距離は計算しにくい
+    \end{itemize}
+    \end{block}
+	\begin{columns}[c]
+		\begin{column}{0.3\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{photo8-1.png}
+		\end{column}
+		\begin{column}{0.3\textwidth} % 横幅の30％
+		\begin{center}
+			猫？
+		\end{center}
+		\end{column}
+	\end{columns}
+    \begin{block}{}
+    \begin{itemize}
+		\item ノイズを加えにくい
+    \end{itemize}
+    \end{block}
 \end{frame}
 
 \section{守り方}
-\begin{frame}{Anonymity}
-\begin{columns}[t]
-    \begin{column}{0.8\textwidth} % 横幅の30％
-        \includegraphics[width=\columnwidth]{photo2.png}
-    \end{column}
-\end{columns}
+	\begin{frame}{Anonymity}
+	\begin{columns}[t]
+		\begin{column}{0.8\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{photo2.png}
+		\end{column}
+	\end{columns}
 
+    \begin{block}{}
+    \begin{itemize}
+		\item 質問者を隠す
+    \end{itemize}
+    \end{block}
 \end{frame}
+
+\begin{frame}{Tursted Third Party}
+    \begin{columns}[t]
+        \begin{column}{0.8\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{photo9.png}
+		\end{column}
+    \end{columns}
+	\begin{block}{} 
+		\begin{itemize}
+			\item 質問者のIPアドレスなどを隠す
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}{Tursted Third Party}
+    \begin{columns}[t]
+        \begin{column}{0.8\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{photo9-1.png}
+		\end{column}
+    \end{columns}
+	\begin{block}{} 
+		\begin{itemize}
+			\item 複数の質問者を混ぜて検索する
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Perturbation}
+	\begin{exampleblock}{Location}
+		\begin{itemize}
+			\item Geo-indistinguishability \cite{andres_geo-indistinguishability:_2013}
+		\end{itemize}
+	\end{exampleblock}
+	\begin{exampleblock}{Keyword}
+		\begin{itemize}
+			\item 質問を一般化して検索する\cite{arampatzis_query_2012}
+				\begin{center}
+					リンゴ $\Rightarrow$ 赤 果物 
+				\end{center}
+			\item 事前に標準質問を作って、本当の質問の代わりに使う \cite{murugesan_providing_2009}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
 \begin{frame}{Obfuscation}
+    \begin{columns}[t]
+        \begin{column}{1\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{photo4.png}
+		\end{column}
+    \end{columns}
+	\begin{block}{} 
+		\begin{itemize}
+			\item 複数の質問を混ぜて検索する
+		\end{itemize}
+	\end{block}
 \end{frame}
-\begin{frame}{PIR}
+
+\begin{frame}{Obfuscation-Location}
+    \begin{columns}[c]
+        \begin{column}{0.4\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{photo10.png}
+		\end{column}
+    \end{columns}
+	\begin{Definition}[$(k,s)-privacy$ \cite{lu_pad:_2008}]
+		本当の位置と$k-1$個のダミー位置に囲まれた図形の面積が$S$以上ある
+	\end{Definition}
+\end{frame}
+
+\begin{frame}{Obfuscation-Keyword \cite{balsa_ob-pws:_2012}}
+	\begin{block}{問題}
+		どうのようなダミー質問がいいダミー質問 \pause
+	\end{block}
+	\begin{block}{Plausibly Deniable Search \cite{murugesan_providing_2009}}
+		\begin{itemize}
+			\item 本当の質問との“距離”が遠い
+			\item 本当の質問と似たような“確率”で提出される
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Latent Semantic Analysis}
+    \begin{columns}[c]
+        \begin{column}{1.0\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{photo11.png}
+		\end{column}
+    \end{columns}
+	\begin{block}{潜在的意味インデキシング}
+	\fontsize{12pt}{7.2}\selectfont
+		単語$\cdot$文書行列$A$を特異値分解$A = USV^T$し、$U$、$S$、$V$	の各列ベクトルを特異値が大きい順に
+		$K$個用いて$A$の低ランク近似$A_K=U_KS_KV_{K}^T$を得る。 \\
+		このように低ランク分解によって、単語とトピックの関係を分析することができる
+	\end{block}
+\end{frame}
+
+\begin{frame}{Plausibly}
+\end{frame}
+
+\begin{frame}{PIR \cite{ostrovsky_survey_2007}}
+	\begin{columns}[t]
+		\begin{column}{0.8\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{photo7.png}
+		\end{column}
+	\end{columns}
+	\begin{block}{} 
+		\begin{itemize}
+			\item 暗号などの手法を用いて質問の内容を完全に隠す
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}{凖同型暗号}
+	\begin{Definition}[凖同型暗号]
+		二つの暗号文 $Enc(m_1), Enc (m_2)$ が与えられた時に、平文や秘密鍵なしで $Enc( m_1 \circ m_2 )$ を計算できる暗号
+	\end{Definition}
+	\begin{Example}[加算ができる凖同型暗号]
+		$Enc(\cdot):$ 暗号化 \, $Dec(\cdot):$復号 \\
+		$ Dec(Enc(m_1) \cdot Enc (m_2)) = m_1 + m_2$
+	\end{Example}
+\end{frame}
+\begin{frame}{凖同型暗号}
+\fontsize{12pt}{7.2}\selectfont
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+			\begin{block}{ユーザー} 
+			\begin{columns}[t]
+				\begin{column}{0.8\textwidth}
+				\begin{block}{質問生成}
+				\begin{algorithmic}[1]
+					\STATE Input:$i^*,n$
+					\FOR{$i = 1, \dots, n$}
+					\IF{$i == i^*$}
+					\STATE {$ q_i = Enc(1)$}
+					\ELSE
+					\STATE{$ q_i =Enc(0)$}
+					\ENDIF
+					\ENDFOR
+					\RETURN $Q = \{q_1, \dots, q_n\}$
+				\end{algorithmic}
+				\end{block}
+				\begin{block}{復号}
+				\begin{algorithmic}[1]
+					\STATE input:$R$
+					\RETURN $Dec(R)$
+				\end{algorithmic}
+				\end{block}
+				\end{column}
+			\end{columns}
+			\end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+			\begin{block}{サーバー} 
+			\begin{columns}[t]
+				\begin{column}{0.8\textwidth}
+				\begin{block}{結果計算}
+				\begin{algorithmic}[1]
+					\STATE Input:$Q,\{x_1, \dots, x_n \}$
+					\STATE $R = 0$
+					\FOR{$i = 1, \dots, n$}
+					\STATE $R = R \cdot q_i^{x_i}$
+					\ENDFOR
+					\RETURN $R$
+				\end{algorithmic}
+				\end{block}
+				\end{column}
+			\end{columns}
+			\end{block}
+			\begin{block}{Note}
+				$m_1 = m_2 \nRightarrow Enc(m_1) = Enc(m_2)$ \\
+				$Dec(R) = \sum_{x_i = 1}Dec(q_i) = x_{i^*}$
+			\end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 \begin{frame}{Obfuscation + PIR}
 \end{frame}
@@ -153,9 +364,10 @@
 \begin{frame}
 \end{frame}
 
-
+\section{参考文献}
 \begin{frame}[t,allowframebreaks]{Bibliography}
-\bibliographystyle{siam}
+\fontsize{8pt}{7.2}\selectfont
+\bibliographystyle{alpha}
 \bibliography{zotero}
 \end{frame}
 
