@@ -432,10 +432,27 @@
 				\includegraphics[width=\columnwidth]{photo15.png}
 			\end{column}
 		\end{columns}
-		質問ではなく単語ごとにダミーを加える
+		\begin{itemize}
+			\item 本当の質問との“距離”が遠い
+			\item 本当の質問と似たような“確率”で提出される
+			\item 質問ではなく単語ごとにダミーを加える
+		\end{itemize}
 	\end{block}
 \end{frame}
 
+\begin{frame}{Wordnet}
+	\begin{columns}[t]
+		\begin{column}{1.0\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{photo14.png}
+		\end{column}
+	\end{columns}
+	\begin{block}{}
+		\begin{itemize}
+			\item “距離”:単語間の最小リンク数
+			\item “確率”:単語が属するsynsetのレベル
+		\end{itemize}
+	\end{block}
+\end{frame}
 \begin{frame}{Obfuscation + PIR}
 \fontsize{12pt}{7.2}\selectfont
 	    \begin{columns}[t]
@@ -464,6 +481,43 @@
     \end{block}
 \end{frame}
 
+\begin{frame}{Snapshot vs Sequence}
+	\begin{block}{Location}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Snapshot vs Sequence}
+	\begin{block}{Keyword}
+	    \begin{columns}[t]
+			\begin{column}{1.0\textwidth} % 横幅の30％
+				\includegraphics[width=\columnwidth]{photo5.png}
+			\end{column}
+		\end{columns}
+		\begin{block}{TrackMeNot \cite{howe_trackmenot:_2009}}
+			一つ一つの質問ではなく、ユーザーの質問ログにノイズを加える
+		\end{block}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Others}
+	\begin{exampleblock}{クラウドストア検索}
+		\begin{itemize}
+			\item CryptDB \cite{popa_cryptdb:_2011}
+			\begin{itemize}
+				\item ユーザーが自分が暗号化した、クラウド上のデータを暗号化したままで検索する方法
+			\end{itemize}
+		\end{itemize}
+	\end{exampleblock}
+   \begin{exampleblock}{データベースの情報を守る}
+		\begin{itemize}
+			\item Simulatable Auditing \cite{kenthapadi_simulatable_2005}
+			\begin{itemize}
+				\item ユーザーの差分質問からデータベース上の情報を守る
+			\end{itemize}
+		\end{itemize}
+    \end{exampleblock}
+
+\end{frame}
 \section{攻撃方}
 \begin{frame}
 \end{frame}
