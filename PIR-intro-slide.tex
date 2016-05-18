@@ -310,17 +310,6 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{PIR}
-	\begin{block}{}
-		\begin{itemize}
-			\item 1995 Chor et al. Multiserver PIR             
-			\begin{itemize}
-				\item              
-			\end{itemize}
-		\end{itemize}
-    \end{block}
-\end{frame}
-
 \begin{frame}{凖同型暗号}
 	\begin{Definition}[凖同型暗号]
 		二つの暗号文 $Enc(m_1), Enc (m_2)$ が与えられた時に、平文や秘密鍵なしで $Enc( m_1 \circ m_2 )$ を計算できる暗号
@@ -384,11 +373,62 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+\begin{frame}[t,allowframebreaks]{PIR}
+\fontsize{12pt}{7.2}\selectfont
+	\begin{block}{}
+		\begin{itemize}
+			\item 1995 Chor et al. : Multiserver PIR             
+			\begin{itemize}
+				\item 情報理論から見るとsingle-database PIRができない              
+			\end{itemize}
+			\item 1997 Kushilevitz and Ostrovsky : computational single-database PIR             
+			\begin{itemize}
+				\item quadratic residuosity computational assumption
+				\item  通信量: $O(2^{\sqrt{lognloglogN}})$             
+			\end{itemize}
+			\item 1999 Cachin et al. : s-PIR            
+			\begin{itemize}
+				\item $\Phi-hiding number-theoretic assumption$
+				\item  通信量: $O(log^8n)$ 
+			\end{itemize}
+			\item 2000 Kushilevitz and Ostrovsky : Private Block Retrieval             
+			\begin{itemize}
+				\item Naor-Yung one-way 2-to-1 trapdoor permutations
+              			\item Goldreich-Levin hard-core predicates
+				\item  通信量: $n-cn/2k + O(k^2)$ 
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{block}{}
+		\begin{itemize}
+			\item 2005 Gentry and Ramzan : Multiserver PIR             
+			\begin{itemize}
+				\item $\Phi-hiding number-theoretic assumption$     
+				\item  通信量: $O(log^2n)$         
+			\end{itemize}
+			\item 2007 Aguilar-Melchor and Gaborit : computationally-efficient PIR             
+			\begin{itemize}
+				\item lattice-based
+				 \item   a few thousand bit-operations per bit in the database
+				 \item 2010 Olumofin and Goldberg:応答時間は普通の方法の千分の一くらい
+			\end{itemize}
+			\item 2013 Yi et al. : PBR             
+			\begin{itemize}
+				\item Fully homomorphic encryption
+				\item 通信量: $𝑂(\gamma𝑙𝑜𝑔𝑚+\gamma𝑛/𝑚) $
+				\item 計算量: $𝑂(𝑚\gamma^2 𝑙𝑜𝑔𝑚+\gamma𝑛/2)𝑏𝑖𝑡 𝑜𝑝𝑒𝑟𝑡𝑎𝑖𝑜𝑛𝑠 $
+				\item 計算時間:$2min$
+				\item 通信時間: $4.5s(100-Mb/second)$
+			\end{itemize}
+		\end{itemize}
+    	\end{block}
+\end{frame}
+
 \begin{frame}{Obfuscation + PIR}
 	\begin{block}{Embellishing Text Search Queries to Protect User Privacy \cite{pang_embellishing_2010}}
 	\end{block}
 \end{frame}
-
 
 \section{攻撃方}
 \begin{frame}
