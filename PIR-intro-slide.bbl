@@ -1,4 +1,5 @@
-\begin{thebibliography}{ABCP13}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{PCB{\etalchar{+}}16}
 
 \bibitem[ABCP13]{andres_geo-indistinguishability:_2013}
 Miguel~E. Andrés, Nicolás~E. Bordenabe, Konstantinos Chatzikokolakis, and
@@ -14,15 +15,42 @@ Avi Arampatzis, Pavlos~S. Efraimidis, and George Drosatos.
 \newblock A query scrambler for search privacy on the internet.
 \newblock {\em Information Retrieval}, 16(6):657--679, October 2012.
 
-\bibitem[AOL]{AOL}
-A {Face} {Is} {Exposed} for {AOL} {Searcher} {No}. 4417749 - {New} {York}
-  {Times}.
+\bibitem[ARJP12]{al-rfou_trackmenot-so-good-after-all_2012}
+Rami Al-Rfou', William Jannen, and Nikhil Patwardhan.
+\newblock {TrackMeNot}-so-good-after-all.
+\newblock {\em arXiv:1211.0320 [cs]}, November 2012.
+\newblock arXiv: 1211.0320.
+
+\bibitem[Bar]{AOL}
+Zeller Barbaro.
+\newblock A {Face} {Is} {Exposed} for {AOL} {Searcher} {No}. 4417749 - {New}
+  {York} {Times}.
 
 \bibitem[BTD12]{balsa_ob-pws:_2012}
 E.~Balsa, C.~Troncoso, and C.~Diaz.
 \newblock {OB}-{PWS}: {Obfuscation}-{Based} {Private} {Web} {Search}.
 \newblock In {\em 2012 {IEEE} {Symposium} on {Security} and {Privacy}}, pages
   491--505, May 2012.
+
+\bibitem[GNG12]{gotz_maskit:_2012}
+Michaela Götz, Suman Nath, and Johannes Gehrke.
+\newblock {MaskIt}: {Privately} {Releasing} {User} {Context} {Streams} for
+  {Personalized} {Mobile} {Applications}.
+\newblock In {\em Proceedings of the 2012 {ACM} {SIGMOD} {International}
+  {Conference} on {Management} of {Data}}, {SIGMOD} '12, pages 289--300, New
+  York, NY, USA, 2012. ACM.
+
+\bibitem[Goo]{mastermind}
+Michael~T. Goodrich.
+\newblock {IEEE} {Xplore} {Abstract} - {The} {Mastermind} {Attack} on {Genomic}
+  {Data}.
+
+\bibitem[GSS{\etalchar{+}}14]{gervais_quantifying_2014}
+Arthur Gervais, Reza Shokri, Adish Singla, Srdjan Capkun, and Vincent Lenders.
+\newblock Quantifying {Web}-{Search} {Privacy}.
+\newblock In {\em Proceedings of the 2014 {ACM} {SIGSAC} {Conference} on
+  {Computer} and {Communications} {Security}}, {CCS} '14, pages 966--977, New
+  York, NY, USA, 2014. ACM.
 
 \bibitem[HN09]{howe_trackmenot:_2009}
 Daniel~C. Howe and Helen Nissenbaum.
@@ -52,6 +80,12 @@ M.~Murugesan and C.~Clifton.
   on {Data} {Mining}}, Proceedings, pages 768--779. Society for Industrial and
   Applied Mathematics, April 2009.
 
+\bibitem[NS08]{narayanan_robust_2008}
+A.~Narayanan and V.~Shmatikov.
+\newblock Robust {De}-anonymization of {Large} {Sparse} {Datasets}.
+\newblock In {\em 2008 {IEEE} {Symposium} on {Security} and {Privacy} (sp
+  2008)}, pages 111--125, May 2008.
+
 \bibitem[OI07]{ostrovsky_survey_2007}
 Rafail Ostrovsky and William E.~Skeith Iii.
 \newblock A {Survey} of {Single}-{Database} {Private} {Information}
@@ -60,6 +94,12 @@ Rafail Ostrovsky and William E.~Skeith Iii.
   {Cryptography} – {PKC} 2007}, number 4450 in Lecture {Notes} in {Computer}
   {Science}, pages 393--411. Springer Berlin Heidelberg, April 2007.
 \newblock DOI: 10.1007/978-3-540-71677-8\_26.
+
+\bibitem[PCB{\etalchar{+}}16]{petit_simattack:_2016}
+Albin Petit, Thomas Cerqueus, Antoine Boutet, Sonia~Ben Mokhtar, David Coquil,
+  Lionel Brunie, and Harald Kosch.
+\newblock {SimAttack}: private web search under fire.
+\newblock {\em Journal of Internet Services and Applications}, 7(1):1, 2016.
 
 \bibitem[PDX10]{pang_embellishing_2010}
 HweeHwa Pang, Xuhua Ding, and Xiaokui Xiao.

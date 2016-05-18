@@ -483,6 +483,21 @@
 
 \begin{frame}{Snapshot vs Sequence}
 	\begin{block}{Location}
+	    \begin{columns}[t]
+			\begin{column}{0.4\textwidth} % 横幅の30％
+				\includegraphics[width=\columnwidth]{photo16.png}
+			\end{column}
+			\begin{column}{0.4\textwidth} % 横幅の30％
+				\includegraphics[width=\columnwidth]{photo16-1.png}
+			\end{column}
+		\end{columns}
+		\begin{block}{MaskIt \cite{gotz_maskit:_2012}}
+			\begin{itemize}
+				\item ユーザーの行動パタンをMarkov chainで表現する
+				\item 攻撃者がユーザーのMarkov chainを持っていると仮定する
+				\item Markov chainを用いて公開していけない情報を特定する
+			\end{itemize}
+		\end{block}
 	\end{block}
 \end{frame}
 
@@ -519,11 +534,20 @@
 
 \end{frame}
 \section{攻撃方}
-\begin{frame}
+\begin{frame}{Linkage attack}
+	\begin{exampleblock}{Websearch}
+		SimAttack \cite{petit_simattack:_2016} \\
+		Quantifying Web-Search Privacy \cite{gervais_quantifying_2014}
+		TrackMeNot-so-good-after-all \cite{al-rfou_trackmenot-so-good-after-all_2012}
+	\end{exampleblock}
+	\begin{exampleblock}{匿名化}
+		Robust De-anonymization of Large Sparse Datasets \cite{narayanan_robust_2008}
+	\end{exampleblock}
 \end{frame}
-\begin{frame}
-\end{frame}
-\begin{frame}
+\begin{frame}{差分攻撃}
+	\begin{exampleblock}{}
+		The Mastermind Attack on Genomic Data \cite{mastermind}
+	\end{exampleblock}
 \end{frame}
 
 \section{参考文献}

@@ -72,22 +72,24 @@
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\slideentry {3}{0}{3}{34/34}{}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {3}{0}{4}{35/35}{}{0}}
+\headcommand {\sectionentry {4}{参考文献}{35}{参考文献}{0}}
+\headcommand {\beamer@sectionpages {32}{34}}
+\headcommand {\beamer@subsectionpages {32}{34}}
+\headcommand {\slideentry {4}{0}{1}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\sectionentry {4}{参考文献}{36}{参考文献}{0}}
-\headcommand {\beamer@sectionpages {32}{35}}
-\headcommand {\beamer@subsectionpages {32}{35}}
-\headcommand {\slideentry {4}{0}{1}{36/36}{}{0}}
+\headcommand {\sectionentry {5}{\translate {References}}{36}{\translate {References}}{0}}
+\headcommand {\beamer@sectionpages {35}{35}}
+\headcommand {\beamer@subsectionpages {35}{35}}
+\headcommand {\slideentry {5}{0}{0}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\sectionentry {5}{\translate {References}}{37}{\translate {References}}{0}}
-\headcommand {\beamer@sectionpages {36}{36}}
-\headcommand {\beamer@subsectionpages {36}{36}}
-\headcommand {\slideentry {5}{0}{0}{37/37}{}{0}}
-\headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {5}{0}{0}{37/38}{}{0}}
-\headcommand {\beamer@framepages {37}{38}}
-\headcommand {\beamer@partpages {1}{38}}
-\headcommand {\beamer@subsectionpages {36}{38}}
-\headcommand {\beamer@sectionpages {36}{38}}
-\headcommand {\beamer@documentpages {38}}
-\headcommand {\def \inserttotalframenumber {36}}
+\headcommand {\slideentry {5}{0}{0}{36/37}{}{0}}
+\headcommand {\beamer@framepages {36}{37}}
+\headcommand {\slideentry {5}{0}{0}{36/38}{}{0}}
+\headcommand {\beamer@framepages {36}{38}}
+\headcommand {\slideentry {5}{0}{0}{36/39}{}{0}}
+\headcommand {\beamer@framepages {36}{39}}
+\headcommand {\beamer@partpages {1}{39}}
+\headcommand {\beamer@subsectionpages {35}{39}}
+\headcommand {\beamer@sectionpages {35}{39}}
+\headcommand {\beamer@documentpages {39}}
+\headcommand {\def \inserttotalframenumber {37}}

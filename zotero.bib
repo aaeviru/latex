@@ -1,4 +1,21 @@
 
+@inproceedings{gervais_quantifying_2014,
+	address = {New York, NY, USA},
+	series = {{CCS} '14},
+	title = {Quantifying {Web}-{Search} {Privacy}},
+	isbn = {978-1-4503-2957-6},
+	url = {http://doi.acm.org/10.1145/2660267.2660367},
+	doi = {10.1145/2660267.2660367},
+	abstract = {Web search queries reveal extensive information about users' personal lives to the search engines and Internet eavesdroppers. Obfuscating search queries through adding dummy queries is a practical and user-centric protection mechanism to hide users' search intentions and interests. Despite few such obfuscation methods and tools, there is no generic quantitative methodology for evaluating users' web-search privacy. In this paper, we provide such a methodology. We formalize adversary's background knowledge and attacks, the users' privacy objectives, and the algorithms to evaluate effectiveness of query obfuscation mechanisms. We build upon machine-learning algorithms to learn the linkability between user queries. This encompasses the adversary's knowledge about the obfuscation mechanism and the users' web-search behavior. Then, we quantify privacy of users with respect to linkage attacks. Our generic attack can run against users for which the adversary does not have any background knowledge, as well as for the cases where some prior queries from the target users are already observed. We quantify privacy at the query level (the link between user's queries) and the semantic level (user's topics of interest). We design a generic tool that can be used for evaluating generic obfuscation mechanisms, and users with different web search behavior. To illustrate our approach in practice, we analyze and compare privacy of users for two example obfuscation mechanisms on a set of real web-search logs.},
+	urldate = {2016-05-18},
+	booktitle = {Proceedings of the 2014 {ACM} {SIGSAC} {Conference} on {Computer} and {Communications} {Security}},
+	publisher = {ACM},
+	author = {Gervais, Arthur and Shokri, Reza and Singla, Adish and Capkun, Srdjan and Lenders, Vincent},
+	year = {2014},
+	keywords = {machine learning, obfuscation, Privacy, quantification framework, query privacy, semantic privacy, Web search},
+	pages = {966--977}
+}
+
 @incollection{ostrovsky_survey_2007,
 	series = {Lecture {Notes} in {Computer} {Science}},
 	title = {A {Survey} of {Single}-{Database} {Private} {Information} {Retrieval}: {Techniques} and {Applications}},
@@ -211,6 +228,8 @@
 	title = {A {Face} {Is} {Exposed} for {AOL} {Searcher} {No}. 4417749 - {New} {York} {Times}},
 	url = {http://www.nytimes.com/2006/08/09/technology/09aol.html?_r=0},
 	urldate = {2016-05-16},
+    author = {Barbaro,Zeller}
+    year = {2006}
 	file = {A Face Is Exposed for AOL Searcher No. 4417749 - New York Times:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/CZUUR59D/09aol.html:text/html}
 }
 
@@ -247,6 +266,25 @@
 	urldate = {2016-05-11},
 	author = {Geetha, S. and Saranya, A.},
 	file = {[PDF] from ijesi.org:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/SUV7A36T/Geetha and Saranya - Spatial Approximate String Keyword content Query p.pdf:application/pdf}
+}
+
+@inproceedings{gotz_maskit:_2012,
+	address = {New York, NY, USA},
+	series = {{SIGMOD} '12},
+	title = {{MaskIt}: {Privately} {Releasing} {User} {Context} {Streams} for {Personalized} {Mobile} {Applications}},
+	isbn = {978-1-4503-1247-9},
+	shorttitle = {{MaskIt}},
+	url = {http://doi.acm.org/10.1145/2213836.2213870},
+	doi = {10.1145/2213836.2213870},
+	abstract = {The rise of smartphones equipped with various sensors has enabled personalization of various applications based on user contexts extracted from sensor readings. At the same time it has raised serious concerns about the privacy of user contexts. In this paper, we present MASKIT, a technique to filter a user context stream that provably preserves privacy. The filtered context stream can be released to applications or be used to answer their queries. Privacy is defined with respect to a set of sensitive contexts specified by the user. MASKIT limits what adversaries can learn from the filtered stream about the user being in a sensitive context - even if the adversaries are powerful and have knowledge about the filtering system and temporal correlations in the context stream. At the heart of MASKIT is a privacy check deciding whether to release or suppress the current user context. We present two novel privacy checks and explain how to choose the one with the higher utility for a user. Our experiments on real smartphone context traces of 91 users demonstrate the high utility of MASKIT.},
+	urldate = {2016-05-18},
+	booktitle = {Proceedings of the 2012 {ACM} {SIGMOD} {International} {Conference} on {Management} of {Data}},
+	publisher = {ACM},
+	author = {Götz, Michaela and Nath, Suman and Gehrke, Johannes},
+	year = {2012},
+	keywords = {data privacy, mobile applications},
+	pages = {289--300},
+	file = {ACM Full Text PDF:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/RVQA6TTC/Götz et al. - 2012 - MaskIt Privately Releasing User Context Streams f.pdf:application/pdf}
 }
 
 @incollection{lipmaa_oblivious_2005,
@@ -360,6 +398,15 @@
 	file = {[PDF] from researchgate.net:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/8EWERGR8/Poulis et al. - 2014 - Apriori-based algorithms for km-anonymizing trajec.pdf:application/pdf}
 }
 
+@misc{mastermind,
+	title = {{IEEE} {Xplore} {Abstract} - {The} {Mastermind} {Attack} on {Genomic} {Data}},
+	url = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5207646},
+	urldate = {2016-05-18},
+	author ={Michael T. Goodrich}
+	year = {2009}
+	file = {IEEE Xplore Abstract - The Mastermind Attack on Genomic Data:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/UHX6ZB4J/abs_all.html:text/html}
+}
+
 @article{tsai_location-sharing_2010,
 	title = {Location-{Sharing} {Technologies}: {Privacy} {Risks} and {Controls}},
 	volume = {6},
@@ -388,6 +435,19 @@
 	keywords = {differential privacy, markov assumption, n-gram model, sequential data},
 	pages = {638--649},
 	file = {ACM Full Text PDF:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/GJENCUU9/Chen et al. - 2012 - Differentially Private Sequential Data Publication.pdf:application/pdf}
+}
+
+@inproceedings{narayanan_robust_2008,
+	title = {Robust {De}-anonymization of {Large} {Sparse} {Datasets}},
+	doi = {10.1109/SP.2008.33},
+	abstract = {We present a new class of statistical de- anonymization attacks against high-dimensional micro-data, such as individual preferences, recommendations, transaction records and so on. Our techniques are robust to perturbation in the data and tolerate some mistakes in the adversary's background knowledge. We apply our de-anonymization methodology to the Netflix Prize dataset, which contains anonymous movie ratings of 500,000 subscribers of Netflix, the world's largest online movie rental service. We demonstrate that an adversary who knows only a little bit about an individual subscriber can easily identify this subscriber's record in the dataset. Using the Internet Movie Database as the source of background knowledge, we successfully identified the Netflix records of known users, uncovering their apparent political preferences and other potentially sensitive information.},
+	booktitle = {2008 {IEEE} {Symposium} on {Security} and {Privacy} (sp 2008)},
+	author = {Narayanan, A. and Shmatikov, V.},
+	month = may,
+	year = {2008},
+	keywords = {Anonymity, Attack, data mining, data privacy, Data security, DVD, Internet, Internet movie database, large sparse dataset, Motion pictures, Netflix prize dataset, online movie rental service, Privacy, privacy risk, Probability, Robustness, statistical de-anonymization attack, Tail, Transaction databases, very large databases},
+	pages = {111--125},
+	file = {IEEE Xplore Abstract Record:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/FDWF22WC/abs_all.html:text/html;IEEE Xplore Full Text PDF:/home/meip-users/.mozilla/firefox/1e8cpu7i.default/zotero/storage/MK3XZ2K7/Narayanan and Shmatikov - 2008 - Robust De-anonymization of Large Sparse Datasets.pdf:application/pdf}
 }
 
 @inproceedings{lu_pad:_2008,
