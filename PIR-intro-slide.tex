@@ -384,18 +384,18 @@
 			\end{itemize}
 			\item 1997 Kushilevitz and Ostrovsky : computational single-database PIR             
 			\begin{itemize}
-				\item quadratic residuosity computational assumption
+				\item $quadratic \, residuosity \, computational \, assumption$
 				\item  通信量: $O(2^{\sqrt{lognloglogN}})$             
 			\end{itemize}
 			\item 1999 Cachin et al. : s-PIR            
 			\begin{itemize}
-				\item $\Phi-hiding number-theoretic assumption$
+				\item $\Phi-hiding \, number-theoretic \, assumption$
 				\item  通信量: $O(log^8n)$ 
 			\end{itemize}
 			\item 2000 Kushilevitz and Ostrovsky : Private Block Retrieval             
 			\begin{itemize}
-				\item Naor-Yung one-way 2-to-1 trapdoor permutations
-              			\item Goldreich-Levin hard-core predicates
+				\item $Naor-Yung \, one-way \, 2-to-1 \, trapdoor \, permutations$
+              			\item $Goldreich-Levin hard-core predicates$
 				\item  通信量: $n-cn/2k + O(k^2)$ 
 			\end{itemize}
 		\end{itemize}
@@ -404,18 +404,18 @@
 		\begin{itemize}
 			\item 2005 Gentry and Ramzan : Multiserver PIR             
 			\begin{itemize}
-				\item $\Phi-hiding number-theoretic assumption$     
+				\item $\Phi-hiding \, number-theoretic \, assumption$     
 				\item  通信量: $O(log^2n)$         
 			\end{itemize}
 			\item 2007 Aguilar-Melchor and Gaborit : computationally-efficient PIR             
 			\begin{itemize}
-				\item lattice-based
+				\item $lattice-based$
 				 \item   a few thousand bit-operations per bit in the database
 				 \item 2010 Olumofin and Goldberg:応答時間は普通の方法の千分の一くらい
 			\end{itemize}
 			\item 2013 Yi et al. : PBR             
 			\begin{itemize}
-				\item Fully homomorphic encryption
+				\item $Fully \, homomorphic \, encryption$
 				\item 通信量: $𝑂(\gamma𝑙𝑜𝑔𝑚+\gamma𝑛/𝑚) $
 				\item 計算量: $𝑂(𝑚\gamma^2 𝑙𝑜𝑔𝑚+\gamma𝑛/2)𝑏𝑖𝑡 𝑜𝑝𝑒𝑟𝑡𝑎𝑖𝑜𝑛𝑠 $
 				\item 計算時間:$2min$
@@ -427,7 +427,31 @@
 
 \begin{frame}{Obfuscation + PIR}
 	\begin{block}{Embellishing Text Search Queries to Protect User Privacy \cite{pang_embellishing_2010}}
+	    \begin{columns}[t]
+			\begin{column}{0.8\textwidth} % 横幅の30％
+				\includegraphics[width=\columnwidth]{photo7.png}
+			\end{column}
+		\end{columns}
+		質問ではなく単語ごとにダミーを加える
 	\end{block}
+\end{frame}
+
+\begin{frame}{Obfuscation + PIR}
+    \begin{block}{Query processing by the search engin}
+        \begin{algorithmic}[1]
+            \STATE {Input:Embellished query $q$}
+            \STATE Let $R = \phi$
+            \FORALL {$\langle t_i,E(u_i) \rangle \in q$}
+            \FORALL {$\langle d_j,p_{ij} \rangle \in L_i$}
+            \IF{$\exists\langle d_j,E(score_j) \rangle \in R$}
+            \STATE $E(score_j) = E(score_j) \cdot E(u_i)^{p_{ij}}$
+            \ELSE \STATE Insert $\langle d_j,E(u_i)^{p_{ij}} \rangle$ into $R$
+            \ENDIF
+            \ENDFOR
+            \ENDFOR
+            \RETURN $R$
+        \end{algorithmic}
+    \end{block}
 \end{frame}
 
 \section{攻撃方}
