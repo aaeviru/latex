@@ -429,7 +429,7 @@
 	\begin{block}{Embellishing Text Search Queries to Protect User Privacy \cite{pang_embellishing_2010}}
 	    \begin{columns}[t]
 			\begin{column}{0.8\textwidth} % 横幅の30％
-				\includegraphics[width=\columnwidth]{photo7.png}
+				\includegraphics[width=\columnwidth]{photo15.png}
 			\end{column}
 		\end{columns}
 		質問ではなく単語ごとにダミーを加える
@@ -437,6 +437,16 @@
 \end{frame}
 
 \begin{frame}{Obfuscation + PIR}
+\fontsize{12pt}{7.2}\selectfont
+	    \begin{columns}[t]
+			\begin{column}{0.8\textwidth} % 横幅の30％
+				\includegraphics[width=\columnwidth]{photo15-1.png}
+			\end{column}
+		\end{columns}
+    \begin{block}{}
+    	$q = \{\langle amaranthaceae,E(0) \rangle , \langle osteosarcoma,E(1) \rangle , \dots \}$ 
+    	$t_i:$単語$i\,$ $d_j:$文章$j\,$ $L_i:t_i$の検索結果 $\,p_{ij}:d_j$に対して$t_i$の$score$
+    \end{block}
     \begin{block}{Query processing by the search engin}
         \begin{algorithmic}[1]
             \STATE {Input:Embellished query $q$}
