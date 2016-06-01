@@ -6,10 +6,14 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{url}
-
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
 \newcommand{\argmin}{\operatornamewithlimits{argmin}}
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\ee}{\mathrm{e}}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
 
 \theoremstyle{definition}
 \newtheorem{thm}{定理}
@@ -38,5 +42,32 @@ where,
 h_{w,b}(x) = \langle w,x \rangle + b = \Sigma_{i=1}^d \omega_ix_i + b.
 \end{equation}
 \end{defi}
-$w' = (b,\omega_1,\omega_2,\omega_3,\dots,\omega_d) x'=(1,x_1,x_2,x_3,\dots,x_d)$をすることによってアフィン関数を斉次函数に変換することができる。
+$w' = (b,\omega_1,\omega_2,\omega_3,\dots,\omega_d) ,x'=(1,x_1,x_2,x_3,\dots,x_d)$をすることによってアフィン関数を斉次函数に変換することができる。
+\section{線形分類}
+\begin{equation}
+\begin{aligned}
+\mathcal{X} = \mathbb{R} ^d, &\mathcal{Y} =\{-1,+1\} \\
+HS_d = sign \circ L_d = \{x \to &sign(h_{w,b}(x)) :h_{w,b} \in L_d\}
+\end{aligned}
+\end{equation}
+\subsection{線型計画法}
+\begin{equation}
+\begin{aligned}
+max_{w \in R^d} \langle u,w \rangle \\
+subject \, to \, Aw \ge v
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+max_{w \in R^d} \langle 0,w \rangle \\
+subject \, to \, (y_ix_{i,j})w \ge v
+\end{aligned}
+\end{equation}
+
+\subsection{Perceptron}
+\begin{algorithm}
+\begin{algorithmic}[1]
+           \Require A training set $(x_1,y_1), \dots , (x_m,y_m)$
+\end{algorithmic}
+\end{algorithm}
 \end{document}
