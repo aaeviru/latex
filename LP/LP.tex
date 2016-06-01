@@ -1,0 +1,42 @@
+\documentclass{jarticle}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{url}
+
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ee}{\mathrm{e}}
+
+\theoremstyle{definition}
+\newtheorem{thm}{定理}
+\newtheorem{defi}[thm]{定義}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{asm}[thm]{仮定}
+
+
+\title{9 Linear Predictors}
+\date{2016年6月3日}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+線形予測：線形分類(halfspaces)、線形回帰(線形関数)、ロジスティック回帰(シグモイド関数 over 線形関数)を紹介する。
+\end{abstract}
+
+\section{線形モデル}
+\begin{defi}[アフィン関数]
+\begin{equation}
+L_d = \{ h_{w,b}:w \in \mathbb{R}^d , b \in \mathbb{R} \}, 
+\end{equation}
+where, 
+\begin{equation}
+h_{w,b}(x) = \langle w,x \rangle + b = \Sigma_{i=1}^d \omega_ix_i + b.
+\end{equation}
+\end{defi}
+$w' = (b,\omega_1,\omega_2,\omega_3,\dots,\omega_d) x'=(1,x_1,x_2,x_3,\dots,x_d)$をすることによってアフィン関数を斉次函数に変換することができる。
+\end{document}
