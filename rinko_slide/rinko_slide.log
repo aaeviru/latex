@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.5.12)  18 MAY 2016 16:03
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.5.12)  16 JUN 2016 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**PIR-intro-slide
-(./PIR-intro-slide.tex
+**rinko_slide
+(./rinko_slide.tex
 pLaTeX2e <2006/11/10> (based on LaTeX2e <2016/03/31> patch level 0)
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/beamer.cls
@@ -898,60 +898,65 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerth
 emecircles.sty
 Package: beamerinnerthemecircles 2010/06/17  (rcs-revision d02a7cf4d8ae)
-) (./PIR-intro-slide.aux)
-\openout1 = `PIR-intro-slide.aux'.
+)
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 71.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 71.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 66.
+
+(./rinko_slide.aux)
+\openout1 = `rinko_slide.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 70.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 70.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 71.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 70.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 71.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 70.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 71.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 70.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 (I search kanjifont definition file: . . ) (I search font definition file: . .
 . . . . . . )
-LaTeX Font Info:    Try loading font information for OT1+txss on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+txss on input line 70.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 71.
+(Font)              scaled to size 13.67995pt on input line 70.
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -988,7 +993,7 @@ LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -998,56 +1003,56 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
-(./PIR-intro-slide.out) (./PIR-intro-slide.out)
+(./rinko_slide.out) (./rinko_slide.out)
 \@outlinefile=\write5
-\openout5 = `PIR-intro-slide.out'.
+\openout5 = `rinko_slide.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/txr/m/n --> OT1/cmss/m/n on input line 71.
+(Font)                  OT1/txr/m/n --> OT1/cmss/m/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/txr/bx/n --> OT1/cmss/bx/n on input line 71.
+(Font)                  OT1/txr/bx/n --> OT1/cmss/bx/n on input line 70.
 \symnumbers=\mathgroup10
 \sympureletters=\mathgroup11
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/txr/m/n on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 71.
+(Font)                  OT1/cmss/m/n --> OT1/txr/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/txr/bx/n --> OT1/txss/bx/n on input line 71.
+(Font)                  OT1/txr/bx/n --> OT1/txss/bx/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/txr/bx/n --> OT1/txss/bx/n on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 71.
+(Font)                  OT1/txr/bx/n --> OT1/txss/bx/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/txss/m/n --> OT1/txss/m/n on input line 71.
+(Font)                  OT1/txss/m/n --> OT1/txss/m/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/txss/b/n --> OT1/txss/m/n on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 71.
+(Font)                  OT1/txss/b/n --> OT1/txss/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/txr/m/it --> OT1/txss/m/it on input line 71.
+(Font)                  OT1/txr/m/it --> OT1/txss/m/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/txr/bx/it --> OT1/txss/m/it on input line 71.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 71.
+(Font)                  OT1/txr/bx/it --> OT1/txss/m/it on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/txtt/m/n --> OT1/txtt/m/n on input line 71.
+(Font)                  OT1/txtt/m/n --> OT1/txtt/m/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/txtt/b/n --> OT1/txtt/m/n on input line 71.
+(Font)                  OT1/txtt/b/n --> OT1/txtt/m/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/txss/m/n --> OT1/txss/bx/n on input line 71.
+(Font)                  OT1/txss/m/n --> OT1/txss/bx/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/txss/m/it --> OT1/txss/bx/it on input line 71.
+(Font)                  OT1/txss/m/it --> OT1/txss/bx/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/txr/bx/n on input line 71.
+(Font)                  OT1/cmss/bx/n --> OT1/txr/bx/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/txss/bx/n --> OT1/txss/bx/n on input line 71.
+(Font)                  OT1/txss/bx/n --> OT1/txss/bx/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/txss/m/n --> OT1/txss/bx/n on input line 71.
+(Font)                  OT1/txss/m/n --> OT1/txss/bx/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/txss/m/it --> OT1/txss/bx/it on input line 71.
+(Font)                  OT1/txss/m/it --> OT1/txss/bx/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/txtt/m/n --> OT1/txtt/bx/n on input line 71.
+(Font)                  OT1/txtt/m/n --> OT1/txtt/bx/n on input line 70.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1073,52 +1078,52 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 71.
+LaTeX Info: Redefining \includegraphics on input line 70.
 
-(./PIR-intro-slide.nav)
+(./rinko_slide.nav)
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 5.69998pt on input line 71.
+(Font)              scaled to size 5.69998pt on input line 70.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <6> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <6> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <6> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 71.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 5.69998pt on input line 71.
+(Font)              scaled to size 5.69998pt on input line 70.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 73.
+(Font)              scaled to size 13.67995pt on input line 72.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 73.
+(Font)              scaled to size 23.63593pt on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 73.
+(Font)              scaled to size 7.59998pt on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 73.
+(Font)              scaled to size 11.39996pt on input line 72.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <4> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 3.79999pt on input line 73.
+(Font)              scaled to size 3.79999pt on input line 72.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 3.79999pt on input line 73.
+(Font)              scaled to size 3.79999pt on input line 72.
  [1
 
-] (./PIR-intro-slide.toc
+] (./rinko_slide.toc
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <8> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <8> not available
@@ -1129,399 +1134,271 @@ LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
 (Font)              scaled to size 7.59998pt on input line 2.
 ) [2
 
-] (./PIR-intro-slide.toc) [3
+] (./rinko_slide.toc) [3
+
+]
+File: rk1.png Graphic file (type bmp)
+
+<rk1.png>
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <20.74> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 82.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <20.74> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 82.
+LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 82.
+LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
+(Font)              scaled to size 19.70294pt on input line 82.
+ [4
+
+]
+File: rk2.png Graphic file (type bmp)
+ <rk2.png> [5
 
 ]
 File: photo1.png Graphic file (type bmp)
  <photo1.png>
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 90.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 90.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <12> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 90.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 90.
-LaTeX Font Info:    Try loading font information for OMS+txss on input line 90.
-
-LaTeX Font Info:    No file OMStxss.fd. on input line 90.
+(Font)              scaled to size 11.39996pt on input line 104.
+LaTeX Font Info:    Try loading font information for OMS+txss on input line 104
+.
+LaTeX Font Info:    No file OMStxss.fd. on input line 104.
 
 
 LaTeX Font Warning: Font shape `OMS/txss/bx/n' undefined
 (Font)              using `OMS/txsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 90.
+(Font)              for symbol `textbullet' on input line 104.
 
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <20.74> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 90.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <20.74> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 90.
-LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 90.
-LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 19.70294pt on input line 90.
-[4
+[6
 
 ]
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 111.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 111.
-LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <10> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 111.
-LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 111.
- [5
+File: rk4.png Graphic file (type bmp)
+ <rk4.png> [7
 
 ]
-LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 135.
-LaTeX Font Info:    Try loading font information for U+txsya on input line 135.
+File: rk5.png Graphic file (type bmp)
+ <rk5.png> [8
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxsya.fd
+]
+LaTeX Font Info:    Try loading font information for U+txsya on input line 140.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 135.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 140.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 135.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 140.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 135.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 140.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 135.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 140.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 135.
-LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <7> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 135.
-
-LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 6.64998pt on input line 135.
-LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <5> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 135.
-
-LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 4.74998pt on input line 135.
- [6
-
-] [7
-
-]
-File: photo8.png Graphic file (type bmp)
-
-<photo8.png>
+(Font)              scaled to size 9.49997pt on input line 140.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 169.
+(Font)              scaled to size 6.64998pt on input line 140.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 169.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 140.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 13.67995pt on input line 169.
+(Font)              scaled to size 13.67995pt on input line 140.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <10> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 169.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 140.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 169.
-File: photo8-1.png Graphic file (type bmp)
- <photo8-1.png> [8
+(Font)              scaled to size 9.49997pt on input line 140.
+LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <7> not available
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 140.
 
-] (./PIR-intro-slide.toc) [9
-
-]
-File: photo2.png Graphic file (type bmp)
- <photo2.png>
-[10
+LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
+(Font)              scaled to size 6.64998pt on input line 140.
+ [9
 
 ]
-File: photo9.png Graphic file (type bmp)
- <photo9.png> [11
-
-]
-File: photo9-1.png Graphic file (type bmp)
- <photo9-1.png> [12
-
-] [13
-
-]
-File: photo4.png Graphic file (type bmp)
- <photo4.png> [14
-
-]
-File: photo10.png Graphic file (type bmp)
-
-<photo10.png> [15
-
-] [16
-
-] [17
-
-]
-File: photo11.png Graphic file (type bmp)
- <photo11.png>
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <12> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 276.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 194.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 11.39996pt on input line 276.
+(Font)              scaled to size 11.39996pt on input line 194.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <8> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 276.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 194.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 7.59998pt on input line 276.
+(Font)              scaled to size 7.59998pt on input line 194.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <6> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 276.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 194.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 5.69998pt on input line 276.
- [18
+(Font)              scaled to size 5.69998pt on input line 194.
+ [10
 
 ]
-File: photo12.png Graphic file (type bmp)
- <photo12.png> [19
+[11
 
 ]
-File: photo13.png Graphic file (type bmp)
-
-<photo13.png> [20
-
-]
-File: photo7.png Graphic file (type bmp)
- <photo7.png> [21
-
-] [22
-
-] [23
-
-]
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^82 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^99 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9c in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^94 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9a in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9b in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9a in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^82 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9a in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^99 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9c in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^94 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9a in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9b in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^8f in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^96 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^a1 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9c in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^92 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9f in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^a1 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^8e in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^96 in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9c in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^9b in font cmss12!
-Missing character: There is no ^^f0 in font cmss12!
-Missing character: There is no ^^9d in font cmss12!
-Missing character: There is no ^^91 in font cmss12!
-Missing character: There is no ^^a0 in font cmss12!
- [24
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <10> not available
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 229.
+LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
+(Font)              scaled to size 13.29996pt on input line 229.
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <14> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <14> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <14> not available
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
+(Font)              scaled to size 13.29996pt on input line 229.
+ [12
 
 ]
-Overfull \vbox (1.61746pt too high) detected at line 426
+Overfull \hbox (16.51364pt too wide) in paragraph at lines 241--241
+[][]  
  []
 
-[25
+[13
 
+] (./rinko_slide.toc) [14
 
 ]
-File: photo15.png Graphic file (type bmp)
- <photo15.png> [26
+File: rk6.png Graphic file (type bmp)
+ <rk6.png> [15
+
+]
+File: rk7.png Graphic file (type bmp)
+ <rk7.png> [16
+
+]
+File: rk8.png Graphic file (type bmp)
+ <rk8.png> [17
+
+]
+File: rk9.png Graphic file (type bmp)
+
+<rk9.png> [18
+
+]
+File: rk10.png Graphic file (type bmp)
+ <rk10.png>
+Overfull \hbox (13.50713pt too wide) detected at line 307
+  \OT1/txss/m/sl/12 u[] \OT1/cmss/m/n/12 = []
+ []
+
+[19
 
 ]
 File: photo14.png Graphic file (type bmp)
- <photo14.png> [27
+ <photo14.png> [20
 
 ]
-File: photo15-1.png Graphic file (type bmp)
- <photo15-1.png>
-Overfull \vbox (6.35172pt too high) detected at line 482
- []
-
-[28
+File: rk11.png Graphic file (type bmp)
+ <rk11.png> [21
 
 ]
-File: photo16.png Graphic file (type bmp)
- <photo16.png>
-File: photo16-1.png Graphic file (type bmp)
- <photo16-1.png> [29
+File: photo14.png Graphic file (type bmp)
+ <photo14.png> [22
 
 ]
-File: photo5.png Graphic file (type bmp)
- <photo5.png> [30
-
-] [31
+File: rk12.png Graphic file (type bmp)
+ <rk12.png> [23
 
 ]
-(./PIR-intro-slide.toc) [32
+File: rk13.png Graphic file (type bmp)
+
+<rk13.png> [24
+
+] (./rinko_slide.toc) [25
 
 ]
-File: photo17.png Graphic file (type bmp)
- <photo17.png> [33
+LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
+(Font)              scaled to size 4.74998pt on input line 377.
+LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <5> not available
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 377.
 
-] [34
+LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
+(Font)              scaled to size 4.74998pt on input line 377.
+ [26
 
-] (./PIR-intro-slide.toc)
-[35
+]
+File: photo11.png Graphic file (type bmp)
+ <photo11.png> [27
 
-] (./PIR-intro-slide.bbl
-Missing character: There is no ^^c3 in font txss!
-Missing character: There is no ^^a9 in font txss!
-Missing character: There is no ^^c3 in font txss!
-Missing character: There is no ^^a1 in font txss!
+] [28
 
+] [29
+
+]
+(./rinko_slide.toc) [30
+
+] (./rinko_slide.bbl
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 9.
+(Font)              using `JT1/gt/m/n' instead on input line 7.
 
 
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 9.
+(Font)              using `JY1/gt/m/n' instead on input line 7.
 
-Missing character: There is no ^^c3 in font txss!
-Missing character: There is no ^^b6 in font txss!
 Missing character: There is no ^^e2 in font txsssl!
 Missing character: There is no ^^80 in font txsssl!
 Missing character: There is no ^^93 in font txsssl!
-) [36
-
-] [37
-
-
-] [38
-
-
-] [39
-
+) [31
 
 ]
 \tf@nav=\write6
-\openout6 = `PIR-intro-slide.nav'.
+\openout6 = `rinko_slide.nav'.
 
 \tf@toc=\write7
-\openout7 = `PIR-intro-slide.toc'.
+\openout7 = `rinko_slide.toc'.
 
 \tf@snm=\write8
-\openout8 = `PIR-intro-slide.snm'.
+\openout8 = `rinko_slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 566.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 566.
- (./PIR-intro-slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 566.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 566.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+ (./rinko_slide.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 445.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 566.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
  ) 
 Here is how much of TeX's memory you used:
- 17831 strings out of 493717
- 342810 string characters out of 6150720
- 422893 words of memory out of 5000000
- 20855 multiletter control sequences out of 15000+600000
- 47773 words of font info for 139 fonts, out of 8000000 for 9000
+ 17754 strings out of 493717
+ 340633 string characters out of 6150720
+ 420715 words of memory out of 5000000
+ 20786 multiletter control sequences out of 15000+600000
+ 49527 words of font info for 143 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 56i,16n,63p,391b,1605s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,63p,387b,1606s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PIR-intro-slide.dvi (39 pages, 237572 bytes).
+Output written on rinko_slide.dvi (31 pages, 160212 bytes).

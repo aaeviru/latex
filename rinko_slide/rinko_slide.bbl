@@ -1,0 +1,17 @@
+\begin{thebibliography}{PDX10}
+
+\bibitem[OI07]{ostrovsky_survey_2007}
+Rafail Ostrovsky and William E.~Skeith Iii.
+\newblock A {Survey} of {Single}-{Database} {Private} {Information}
+  {Retrieval}: {Techniques} and {Applications}.
+\newblock In Tatsuaki Okamoto and Xiaoyun Wang, editors, {\em Public {Key}
+  {Cryptography} – {PKC} 2007}, number 4450 in Lecture {Notes} in {Computer}
+  {Science}, pages 393--411. Springer Berlin Heidelberg, April 2007.
+\newblock DOI: 10.1007/978-3-540-71677-8\_26.
+
+\bibitem[PDX10]{pang_embellishing_2010}
+HweeHwa Pang, Xuhua Ding, and Xiaokui Xiao.
+\newblock Embellishing {Text} {Search} {Queries} to {Protect} {User} {Privacy}.
+\newblock {\em Proc. VLDB Endow.}, 3(1-2):598--607, September 2010.
+
+\end{thebibliography}

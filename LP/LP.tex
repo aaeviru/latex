@@ -14,7 +14,7 @@
 \newcommand{\ee}{\mathrm{e}}
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
-
+\renewcommand{\algorithmicensure}{\textbf{Initialize:}}
 \theoremstyle{definition}
 \newtheorem{thm}{定理}
 \newtheorem{defi}[thm]{定義}
@@ -28,9 +28,6 @@
 
 \begin{document}
 \maketitle
-\begin{abstract}
-線形予測：線形分類(halfspaces)、線形回帰(線形関数)、ロジスティック回帰(シグモイド関数 over 線形関数)を紹介する。
-\end{abstract}
 
 \section{線形モデル}
 \begin{defi}[アフィン関数]
@@ -39,7 +36,7 @@ L_d = \{ h_{w,b}:w \in \mathbb{R}^d , b \in \mathbb{R} \},
 \end{equation}
 where, 
 \begin{equation}
-h_{w,b}(x) = \langle w,x \rangle + b = \Sigma_{i=1}^d \omega_ix_i + b.
+h_{w,b}(x) = \langle w,x \rangle + b = \sum_{i=1}^d \omega_ix_i + b.
 \end{equation}
 \end{defi}
 $w' = (b,\omega_1,\omega_2,\omega_3,\dots,\omega_d) ,x'=(1,x_1,x_2,x_3,\dots,x_d)$をすることによってアフィン関数を斉次函数に変換することができる。
@@ -51,12 +48,14 @@ HS_d = sign \circ L_d = \{x \to &sign(h_{w,b}(x)) :h_{w,b} \in L_d\}
 \end{aligned}
 \end{equation}
 \subsection{線型計画法}
-\begin{equation}
+\begin{equation} \label{eq:LP}
 \begin{aligned}
 max_{w \in R^d} \langle u,w \rangle \\
 subject \, to \, Aw \ge v
 \end{aligned}
 \end{equation}
+線型計画(\ref{eq:LP})を効率的に解ける手法がある. \\
+線形分類問題が以下の線型計画問題を用いて解けることができる.
 \begin{equation}
 \begin{aligned}
 max_{w \in R^d} \langle 0,w \rangle \\
@@ -66,8 +65,101 @@ subject \, to \, (y_ix_{i,j})w \ge v
 
 \subsection{Perceptron}
 \begin{algorithm}
+\caption{Batch Perceprton}
 \begin{algorithmic}[1]
-           \Require A training set $(x_1,y_1), \dots , (x_m,y_m)$
+	\Require A training set $(x_1,y_1), \dots , (x_m,y_m)$
+	\Ensure {$w^{(1)} = (0, \dots , 0)$}
+	\For {$t = 1,2, \dots$}
+	\If {$(\exists i s.t. y_i \langle w^{(t)},x_i \rangle \le 0)$}
+	\State $w^{(t+1)} = w^{(t)} + y_ix_i$
+	\Else
+	\State output $w^{(t)}$
+	\EndIf
+	\EndFor
 \end{algorithmic}
 \end{algorithm}
+一回の反復には$w$を$y_ix_i$修正する.
+データセットが分割可能であればアルゴリズムは$(RB)^2$以下の反復で終了する.
+$B$はデータセットを二分できる$w$のモジュラの最小値で、$R$は$\|x\|$の最大値である.
+\begin{equation} \label{eq:pp1}
+1 \ge \frac{\langle w^* , w^{(T+1)} \rangle }{\|w^*\|\|w^{(T+1)}\|} \ge \frac{\sqrt{T}}{(RB)^2}
+\end{equation}
+まず数学的帰納法を用いて$\langle w^*,w^{(T+1)} \rangle \ge T$を証明する.
+反復1：$w^{(1)} = (0, \dots , 0),\langle w^* , w^{(1)} \rangle = 0$ 
+反復t：
+\begin{equation}
+\begin{aligned}
+\langle w^* , w^{(t+1)} \rangle - \langle w^* , w^{(t)} \rangle & = \langle w^* , w^{(t+1)} - w^{(t)} \rangle \\
+& = \langle w^* , y_ix_i \rangle = y_i \langle w^* , x_i \rangle \\
+& \ge 1
+\end{aligned}
+\end{equation}
+次は$\| w^{(T+1)} \|$の上限を計算する.
+\begin{equation}
+\begin{aligned}
+\| w^{(T+1)} \|^2 & = \| w^{(T)} + y_ix_i \|^2 \\
+& = \| w^{(T)}\|^2 + 2y_i \langle w^* , x_i \rangle + y_i^2\| x=i \|^2\\
+& \le \| w^{(T)} \|^2 + R^2 \le TR^2
+\end{aligned}
+\end{equation}
+
+\subsection{VC Dimension}
+halfspacesのVC Dimensionは$d$である. \\
+1,HSがシャッターできるサイズ$d$のデータセットが存在する:線形区間の基底 \\
+2,データセットのサイズが$d$より大きいの場合:$\sum_{i \in I} a_ix_i = \sum_{j \in J} |a_j|x_j$ \\
+\begin{small}
+$0 < \sum_{i \in I} a_i \langle x_i,w \rangle = \langle \sum_{i \in I} a_ix_i,w \rangle = \langle \sum_{j \in J} |a_j|x_j,w \rangle = \sum_{j \in J} |a_j| \langle x_j,w \rangle < 0$
+\end{small}
+\section{線形回帰}
+\begin{equation}
+\mathcal{H}_{reg} = L_d = \{ x \rightarrow \langle w,x \rangle + b : w \in \mathbb{R}^d,b \in \mathbb{R} \}
+\end{equation}
+二乗ロス:
+\begin{equation}
+\ell (h,(x,y)) = (h(x)-y)^2
+\end{equation}
+平均二乗ロス:
+\begin{equation}
+L_s(h) = \frac{1}{m} \sum_1^m(h(x)-y)^2
+\end{equation}
+
+\subsection{最小二乗法}
+\begin{equation}
+\underset{w}{argmin}L_s(h_w) = \underset{w}{argmin} \frac{1}{m} \sum_1^m(\langle w,x_i \rangle -y)^2
+\end{equation}
+\begin{equation}
+\frac{2}{m} \sum_1^m(\langle w,x_i \rangle -y)x_1 = 0
+\end{equation}
+\begin{equation}
+\begin{aligned}
+w = A^{-1}b & ,w = A^+b \\
+A = (\sum_1^mx_ix_i^T) \, a&nd \, b = \sum_i^my_ix_i
+\end{aligned}
+\end{equation}
+
+\subsection{多項式回帰}
+\begin{equation}
+x = p(x) = w_0 + w_1x + \dots + w_nx^n = \langle w,(1,x,\dots.x^n) \rangle = \langle w,\psi(x) \rangle
+\end{equation}
+
+\section{ロジスティック回帰}
+$\mathbb{R} \rightarrow [0,1] \, , \, \phi_{sig}(z) = \frac{1}{1 + exp(-z)} \, , \, \mathcal{H}_{sig} = \phi_{sig} \circ L_d $ \\
+ロジスティック回帰を用いて二値分類を解くことが多い,$h(x) = sign(h_w(x)-1/2)$ \\
+$y=1$のときは$1 -h_w(x)$を小さくしたい,$y=-1$のときは$h_w(x)$を小さくしたい \\
+\begin{small}
+\begin{equation}
+1-h_w(x) = 1 - \frac{1}{1 + exp(- \langle w,x \rangle )} = \frac{exp(- \langle w,x \rangle )}{1 + exp(- \langle w,x \rangle )} = \frac{1}{1 + exp(\langle w,x \rangle )} = \frac{1}{1 + exp(y \langle w,x \rangle )}
+\end{equation}
+\end{small}
+\begin{small}
+\begin{equation}
+h_w(x) = 1 - \frac{1}{1 + exp(- \langle w,x \rangle )} = \frac{1}{1 + exp(y \langle w,x \rangle )}
+\end{equation}
+\end{small} 
+\begin{small}
+\begin{equation}
+\ell(h_w(x)) = \frac{1}{1 + exp(y \langle w,x \rangle )}
+\end{equation}
+\end{small} 
+
 \end{document}

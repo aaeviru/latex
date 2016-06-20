@@ -1,0 +1,867 @@
+\documentclass{jarticle}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{url}
+
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ee}{\mathrm{e}}
+
+\theoremstyle{definition}
+\newtheorem{thm}{定理}
+\newtheorem{defi}[thm]{定義}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{asm}[thm]{仮定}
+
+
+\title{Gibbs事後分布の測度集中と差分プライバシ\\（研究紹介）}
+\author{中川研究室 修士2年 南 賢太郎\\指導教員： 中川 裕志 教授}
+\date{2015年6月12日}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+差分プライバシとは，個人情報を含むデータから構成した推定量や学習器を外部に公開する場合のプライバシ保護基準として代表的なものである．
+制約条件として差分プライバシを満たしつつ，汎化誤差の意味でできるだけ良いランダム推定量を構成する問題を差分プライベート学習という．
+Gibbs事後分布とはデータ依存の確率分布であり，ベイズの事後分布を逆温度パラメータによって一般化したものに相当する．
+Gibbs事後分布はPAC-Bayes学習と呼ばれる分野では基本的な役割をもつため，Gibbs事後分布が差分プライバシ制約を満たす条件を調べることは，
+既存の統計的学習の枠組みと差分プライベート学習を結びつける意味で重要である．
+
+$(\varepsilon, \delta)$-差分プライバシという性質を調べる際には，尤度比の測度集中不等式を示すことが鍵となる．
+本発表では，損失関数と事前分布が凸性の仮定を満たす場合に，Gibbs事後分布が差分プライバシを満たすための条件を測度集中の理論を利用して調べる．
+また，サンプルサイズおよび事前分布の縮小の強さと，「プライバシ保護のしやすさ」の関係について論じる．
+\end{abstract}
+
+\section{はじめに}
+
+個人情報を含むデータから抽出した何らかの統計情報を第三者に公開する場合，
+その値を通して元のデータセットに含まれる特定個人の情報が漏洩する可能性がある．
+推定量や学習器といった統計情報は，一見すると元のデータ形式とはかけ離れており，「匿名化された」値となっていることが多い．
+しかし，他の公開情報との組み合わせによる名寄せ行為の危険性を考慮すると，
+特に機微性のある個人情報を保護するためには，
+任意の統計的手法によって特定個人のデータを逆推定することの困難性が保証されることが望ましい．
+差分プライバシ\cite{Dwork2006b}は，そのような保証を定量的に与える尺度として代表的なものである．
+
+差分プライバシは，公開する値を適当にランダム化し，
+データセットに含まれる$1$個人分のデータが変化したとき，それに伴う出力の変化が確率分布の意味で小さいということを主張している．
+この保証により，直感的には，たとえ攻撃者がある特定の$1$人以外の全てのデータを所持していたとしても，
+出力を用いて残りの$1$人の値を有意に特定することが困難となる．
+差分プライバシの基本的なアイデアは，本来あるべき出力にノイズを加えることによって撹乱するというものであり，
+一般に，強い差分プライバシを保証しようとすればするほど推定や予測の精度は悪くなるというトレードオフの関係がある．
+そこで，差分プライバシ制約を満たした上で，いかに精度のよい学習を行うことができるかということは
+興味深い問題であり，近年盛んに研究されている\cite{Chaudhuri2011,Kifer2012,Bassily2014,Talwar2014}．
+
+差分プライバシを満たしつつ与えられた目的関数をなるべく小さくするようなサンプリングアルゴリズムとして，
+最も基本的なものは指数メカニズム\cite{McSherry2007}である．
+Wang, et al. \cite{Wang2015b}は，パラメトリック統計モデルにおけるベイズ事後分布
+\begin{equation}
+\frac{\prod_{i=1}^{n} p(x_i \mid \theta) \pi(\theta)}
+{\int \prod_{i=1}^{n} p(x_i \mid \theta) \pi(\theta) \dd\theta}
+\end{equation}
+から$\theta$をサンプリングすることが指数メカニズムの特別な場合であることを指摘し，
+対数尤度$\log p(x|\theta)$が有界である場合には差分プライバシが常に成立することを示した．
+よって，この場合は差分プライバシとベイズ的な学習手法が同一の枠組みに収まり，
+プライバシ保護と学習精度のトレードオフなどの議論の見通しが良くなると考えられる．
+しかし一般に，対数尤度が有界となるような確率モデルは非常に限られており，\cite{Wang2015b}の主張は
+そのままの形で適用することができない．
+
+一方，統計学や機械学習において，
+ある種の正則化の目的で推定量をランダム化するという手段が取られることがある．
+特に，PAC-Bayes学習\cite{Catoni2004,Catoni2007}では，Gibbs事後分布(Gibbs posterior)または
+擬ベイズ事後分布 (pseudo-Bayesian posterior) と呼ばれるデータ依存の条件付き分布
+\begin{equation}
+\frac{\exp \left( -\beta \sum_{i=1}^{n} \ell(\theta, x_i) \right) \pi(\theta)}
+{\int \exp \left( -\beta \sum_{i=1}^{n} \ell(\theta, x_i) \right) \pi(\theta)\dd \theta}
+\label{eq:pseudo_posterior}
+\end{equation}
+からサンプルしたランダム推定量が考察される．
+$\ell(\theta, x)$は損失関数であり，パラメトリック統計モデルにおける推定の場合には$-\log p(x\mid\theta)$が
+これに相当する．
+このような推定量も，密度関数の式の形のみに着目する限りでは，指数メカニズムと似ている．
+よって，何らかの条件のもとで差分プライバシを満たすということが示せれば，
+プライバシ保護とPAC-Bayes学習を同一の枠組みで議論することができ，アルゴリズム設計や理論解析の幅が広がることが期待できる．
+
+本論文では，適当な条件のもとでGibbs事後分布(\ref{eq:pseudo_posterior})からのサンプリングが
+$(\varepsilon, \delta)$-差分プライバシを満たすことを示す．
+本論文の結果の特徴は次のとおりである：
+\begin{itemize}
+\item {\em （非有界損失への対応）} 損失関数がパラメータ$\theta$に関してLipschitzである場合，有界性を用いずに差分プライバシを示すことができる．
+この意味で，損失関数が有界な場合の\cite{Wang2015b}の結果の拡張になっている．（定理\ref{thm:1}）
+\item {\em （事前分布の縮小効果とプライバシの関係）} 事前分布$\pi$が縮小効果の強い（尖った）分布であるとき，事後分布は事前分布の影響を受けやすく，
+データの変化に関してロバストであることが期待される．
+したがって，そのような事前分布を使った場合の方が差分プライバシを満たしやすい．
+本論文の結果は，事前分布の強凸性パラメータに応じて逆温度パラメータ$\beta$の設定可能な範囲が広がることを示しており，
+この性質を反映した結果となっている．（定理\ref{thm:1}，定理\ref{thm:2}）
+\item {\em （サンプルサイズとプライバシの関係）} サンプルサイズ$n$が大きいほど，$1$つのデータあたりの寄与が小さくなり，差分プライバシを満たしやすくなることが期待される．
+このような効果は，逆温度パラメータの上界という形で直接的に示される．（定理\ref{thm:2}）
+\end{itemize}
+
+本論文の構成は以下の通りである．
+第2節では，差分プライバシの定義と基本的な性質を与え，事後分布からのサンプリングに関する\cite{Wang2015b}の結果を紹介する．
+ここでは，先行研究でよく知られている結果を，関数のLipschitz性を通して簡潔に書くことを試みる．
+本論文における主結果は第3節で述べる．
+3.1節では，$(\varepsilon, \delta)$-差分プライバシの十分条件である対数尤度比の裾確率のバウンドについて説明する．
+3.2節では擬ベイズ事後分布(\ref{eq:pseudo_posterior})が差分プライバシを満たすことを主張した主定理を述べる．
+第4節では，第3節で得られた結果を利用して，いくつかの新しい差分プライベート学習のアルゴリズムを導出する．
+4.1節では，ロジスティック回帰のベイズ的な対応物による差分プライベートな線形分類器について説明する．
+4.2節では，正規分布の密度推定の例を紹介する．
+4.3節では，マルコフ連鎖モンテカルロ法によってGibbs事後分布を近似する場合のプライバシ保証について説明する．
+第5節では結論と今後の課題を述べる．
+
+\section{差分プライバシ} \label{s:dp}
+
+\subsection{定義とLipschitz性による特徴づけ}
+
+差分プライバシは，ユーザー$1$人分のデータでのみ異なるデータセット同士に対応する出力が，
+統計的な意味で互いに区別しにくい，ということを定量化したものである．
+本論文では一般性を失うことなく，
+\footnote{
+文献によってはデータサイズの$n$違いや，置換を考えた編集距離を利用することもある．
+現実的な意味を考えるとそちらが妥当な場合もあるが，本論文で主に扱う統計的学習の問題では，
+そのような違いは本質的に無視できる．}
+データセット$D$は$n$人のユーザーの個人データ$x_i \in \mathcal{X}$からなる列
+$D=(x_1, \ldots, x_n )$とし，$2$つのデータセット$D,D^\prime$が隣接するとは$d_H(D,D^\prime)=1$
+であることとする．
+ここで$d_H$はデータセットの空間$\mathcal{D}=\mathcal{X}^n$で定義されたハミング距離
+$d_H(D, D^\prime)=\sum_{i=1}^{n}1_{\{x_i \neq x_i^\prime \}}$
+である．
+
+データセット$D$を入力とし，ある（可測）空間$(\Theta, \mathcal{T})$の値を出力として公開することを考える．
+$\Theta$上の確率測度の全体を$\mathcal{M}(\Theta)$で表す．
+$\rho: \mathcal{D}\to\mathcal{M}(\Theta)$を考える．
+つまり$\rho$はデータセット$D$を入力として確率分布$\rho_D$を出力する関数である．
+実際には，$\rho_D$に従う確率変数をサンプリングする行為が推定量の公開に相当する．
+\begin{defi}[差分プライバシ \cite{Dwork2006b}]
+$\varepsilon>0$, $\delta \geq 0$を与えられたプライバシ強度とする．
+$\rho: \mathcal{D}\to\mathcal{M}(\Theta)$が
+$(\varepsilon, \delta)$-差分プライバシを満たすとは，
+任意の$D, D^\prime \in \mathcal{D}$, $d_H(D,D^\prime)=1$に対して，
+\begin{equation}
+\rho_D(A) \leq e^\varepsilon \rho_{D^\prime}(A) + \delta, \;\; \forall A \in \mathcal{T}
+\label{eq:dp_def}
+\end{equation}
+が成り立つことをいう．
+特に，$\delta=0$のとき$\rho$は$\varepsilon$-差分プライバシを満たすという．
+\end{defi}
+
+$\delta=0$のとき，不等式(\ref{eq:dp_def})は
+\begin{equation}
+d_{\mathrm{priv}}(\rho_D, \rho_{D^\prime}):=
+\sup_{A\in\mathcal{T}} \left| \log \frac{\rho_D(A)}{\rho_{D^\prime}(A)} \right |
+\leq \varepsilon
+\end{equation}
+であることと等価である．
+ここで上の$d_{\mathrm{priv}}$は$\mathcal{M}(\Theta)$上の「強い」距離
+\footnote{ゼロ集合を除くなどして適切に定義すると，Kullback-Leiblerダイバージェンスや全変動よりも収束が強い距離が得られる．詳細は省略する．}
+を定めることがわかるが，
+$\rho$が$\varepsilon$-差分プライバシを満たすとは，Lipschitz性
+$d_{\mathrm{priv}}(\rho_D, \rho_{D^\prime}) \leq \varepsilon d_H(D, D^\prime)$
+と同値であることがわかる．
+一般に，統計的な推定や検定の問題の難しさは，大雑把に言えば異なる確率分布同士の区別のしやすさで決まる．
+攻撃者の目的は，公開された統計量をもとに，ハミング距離$d_H$の意味でデータセットを区別することである．
+差分プライバシは，データセット同士がその距離の意味で近いほど，統計的手法では区別できないということを述べている．
+
+なお，ハミング距離は「縮退した」距離であり，Lipschitz性が本質的にはデータセットの空間または損失関数の有界性を要請するため，
+特にデータ空間が非有界な場合の差分プライバシの扱いは難しい．
+Dimitrakakis, et al. \cite{Dimitrakakis2014}では，差分プライバシの定義をより一般の距離まで拡張することで，
+ハミング距離では扱いづらい正規分布モデルなどのプライバシ保証を示している．
+しかし，本論文では伝統的な定義通り，ハミング距離による隣接関係のみ考察する．
+
+\subsection{指数メカニズム}
+
+データセット$D$を入力すると，$\theta$の非負関数$H(\theta, D)$が決まるとする．
+$H$は情報$\theta$を公開した場合の損失関数（または負の効用関数）に相当し，
+$\varepsilon$-差分プライバシの制約を満たす範囲で，この値をなるべく小さくするような$\theta$を公開することが望ましい．
+このとき，どのような確率分布から$\theta$をサンプリングすればよいかが問題になるが，
+指数メカニズム(exponential mechanism)\cite{McSherry2007}がその一般的な指針を与える．
+本節ではこのアルゴリズムについて，Lipschitz性に着目した新たな説明を与える．
+
+関数に値を取る写像$D \mapsto H(\cdot, D)$がsupノルムに関してLipschitzであるとする．
+つまり，ある$\Delta_1>0$が存在して
+\begin{equation}
+\parallel H(\cdot, D) - H(\cdot, D^\prime) \parallel_\infty
+\leq \Delta_1 d_H(D, D^\prime)
+\label{eq:h_lips}
+\end{equation}
+であったとする．
+差分プライバシの文脈では，Lipschitz定数$\Delta_1$はしばしば$L_1$-sensitivityと呼ばれる．
+（式(\ref{eq:h_lips})は実質的には$d_H(D, D^\prime)=1$のところでしか情報を持たないことに注意する．）
+
+次に，$\Theta$上の（非負）関数$f$に対して，確率分布
+\begin{equation}
+\dd G_{\beta, f}(\theta) =
+\frac{\exp(-\beta f(\theta))\pi(\theta)}{Z} \dd \theta
+\end{equation}
+を対応させる写像$G_{\beta, \cdot}$を考える．
+ここで，$\beta > 0$は与えられた正数，$\pi$は与えられた基底測度で，
+$Z$は$G_{\beta, f}$が確率密度になるようにするための正規化定数である．
+$\pi$の寄与を考えなければ，$G_{\beta, f}$は，$f$の値が大きいところに集中した分布である．
+本論文では$G_{\beta, \cdot}$をGibb写像と呼ぶことにする．
+Gibbs写像は$2\beta$-Lipschitzであることがわかる．
+すなわち，
+\begin{equation}
+d_\mathrm{priv}(G_{\beta, f}, G_{\beta, g}) \leq 2\beta \parallel f - g \parallel_\infty
+\end{equation}
+である．
+一般に，$C_1$-Lipschitz関数と$C_2$-Lipschitz関数との合成は$C_1 C_2$-Lipschitzであるから，
+$H(\cdot, D)$とGibbs写像との合成は$2\Delta_1 \beta$-差分プライバシを満たす．
+以上をまとめると次のようになる．
+\begin{thm}[指数メカニズム \cite{McSherry2007}]
+データセット$D$に対して，
+\begin{equation}
+\exp \left( - \frac{\varepsilon}{2\Delta_1}H(\theta, D) \right) \pi(\theta)
+\end{equation}
+に比例した密度をもつ確率分布から$\theta$をサンプルすることを考える．
+この対応は$\varepsilon$-差分プライバシを満たす．
+\end{thm}
+
+さて，$H(\theta, D) = -\sum_{i=1}^{n}\log p(x_i \mid \theta)$として，
+Gibbs事後分布
+\begin{equation}
+q_\beta(\theta \mid D) = 
+\frac{ \left( \prod_{i=1}^{n} p(x_i \mid \theta)\right)^\beta \pi(\theta)}
+{\int \left( \prod_{i=1}^{n} p(x_i \mid \theta)\right)^\beta \pi(\theta) \dd\theta}
+\end{equation}
+を考える．
+$\beta>0$は逆温度パラメータである．
+$q_\beta(\theta \mid D)$は$\beta=1$のとき通常の意味でのベイズ事後分布，$\beta \to \infty$
+のとき最尤推定量の上への点質量と一致することに注意する．
+また，PAC-Bayes学習では収束レートの関係でしばしば$0<\beta<1$の場合（高温度）に興味がある．
+$q_\beta(\theta \mid D)$は形式的には指数メカニズムと同じ形をしている．
+実際にそうであるためには，$H$がLipschitzであればよい．
+次は\cite{Wang2015b}を少し一般化したものである．証明は明らかである．
+\begin{thm}[Wang, et al.(2015)\cite{Wang2015b}, Theorem 4] \label{thm:wang}
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item 任意の$x\in\mathcal{X}$に対して対数尤度関数が
+$\parallel \log p(x|\cdot) \parallel_\infty \leq B$を満たすとする．
+このとき，$H(\cdot, D)=\sum_{i}\log p(x_i \mid \cdot)$は$2B$-Lipschitzであり，$q_\beta(\theta \mid D)$は
+$4\beta B$-差分プライバシを満たす．
+特に，$\beta=1$とすると，ベイズ事後分布$p(\theta \mid D)$は$4B$-差分プライバシを満たす．
+\item $H(\cdot, D)$が$\mathcal{D}$上のある距離$d$に関して$L$-Lipschitzであり，
+さらに$\mathcal{D}$の距離$d$による直径が有界$\sup_{D,D^\prime}d(D,D^\prime)\leq 2R$であるとする．
+このとき，$H(\cdot, D)$は$d_H$に関して$2LR$-Lipschitzであるから，$q_\beta(\theta \mid D)$は
+$4\beta LR$-差分プライバシを満たす．
+\end{enumerate}
+\end{thm}
+定理\ref{thm:wang}は，ベイズ的な枠組みと差分プライバシを結びつける意味で非常に重要であると考えられるが，
+実際には(i)(ii)の仮定を満たす統計モデルは多くない．
+例えば，正規分布モデルでは対数尤度関数は$\theta$について有界でも，$x$についてLipschitzでもない．
+
+では，他の対数尤度関数（より一般には，損失関数）に対して，
+指数メカニズムが成り立たない場合にも，何らかの意味で差分プライバシを示すことはできないだろうか．
+やや不正確な議論ではあるが，直感的には次のようなことが考えられる．
+$\beta=1$とすると，ベイズ事後分布は，Bernstein-von Misesの定理\cite{vdV1998}より，
+$n\to\infty$の極限では正規分布に近い挙動をする．
+一方，平均または分散が少しでも異なる2つの正規分布に対して，距離$d_\mathrm{priv}$は$+\infty$となる．
+したがって，もし十分大きな有限の$n$において事後分布が正規分布で近似されるならば，
+それらは$\varepsilon (<\infty)$-差分プライバシを満たさない．
+一方，そのような場合でも$\delta > 0$を適当にとれば，$(\varepsilon, \delta)$-差分プライバシを満たすようにできる．
+そこで，次節では，Gibbs事後分布が$(\varepsilon, \delta)$-差分プライバシを満たす条件を調べることにする．
+
+\section{Gibbs事後分布による差分プライバシ}
+
+\subsection{$(\varepsilon,\delta)$-差分プライバシの十分条件}
+
+$\delta>0$とする．
+$(\varepsilon, \delta)$-差分プライバシを満たすための十分条件として，次の定理がよく知られている．
+証明は\cite{Hall2013}, Lemma 2を参照されたい．
+\begin{thm}
+$\rho: \mathcal{D} \to \mathcal{M}(\Theta)$が
+$(\varepsilon, \delta)$-差分プライバシを満たすための十分条件は，
+任意の$D, D^\prime \in \mathcal{D}$, $d_H(D, D^\prime)=1$に対して，
+\begin{equation}
+\rho_D \left \{ \log \frac{\dd \rho_D}{\dd \rho_{D^\prime}} \geq \varepsilon \right \} \leq \delta
+\label{eq:suff_cond}
+\end{equation}
+が成り立つことである．
+ここで$\dd \rho_D / \dd \rho_{D^\prime}$は密度関数の比である．
+\end{thm}
+
+与えられた$D$, $D^\prime$に対して，
+不等式(\ref{eq:suff_cond})が成立するためには何が必要だろうか．
+(\ref{eq:suff_cond})は対数尤度比$\log \frac{\dd \rho_D}{\dd \rho_{D^\prime}}$の裾確率に関する不等式である．
+この関数の平均値は
+\begin{equation}
+\mathbb{E}_{\rho_D} \left[ \log \frac{\dd \rho_D}{\dd \rho_{D^\prime}} \right] = D_{\mathrm{KL}}(\rho_D, \rho_{D^\prime})
+\end{equation}
+であり，Kullback-Leibler(KL)ダイバージェンスに一致する．
+もし平均値$D_{\mathrm{KL}}(\rho_D, \rho_{D^\prime})$が十分小さく($D_{\mathrm{KL}}(\rho_D, \rho_{D^\prime})\approx \varepsilon$)，
+さらに$\log \frac{\dd \rho_D}{\dd \rho_{D^\prime}}$が平均値のまわりに十分集中していれば，
+つまり，$t>0$に関して減少する関数$\psi(t)$が存在して
+\begin{equation}
+\rho_1 \left \{ \log \frac{\dd \rho_D}{\dd \rho_{D^\prime}} \geq D_{\mathrm{KL}}(\rho_D, \rho_{D^\prime}) + t \right \}
+\leq \psi(t)
+\label{eq:tail_1}
+\end{equation}
+のような不等式を示すことができれば，それを通して裾確率(\ref{eq:suff_cond})を評価することができると考えられる．
+%このアイデアに基づき，次節では一般のGibbs分布に関する測度集中不等式を導入する．
+
+\subsection{Gibbs事後分布のプライバシ}
+
+パラメータ空間$\Theta$を$\mathbb{R}^d$またはその部分集合とし，Gibbs分布
+\begin{equation}
+\dd G_{\beta, H}(\theta) = \frac{\exp(-\beta H(\theta))\pi(\theta)}{Z} \dd \theta
+\end{equation}
+を考える．
+$H(\theta)$，$\pi(\theta)$はそれぞれ適当な滑らかさをもつエネルギー関数と密度関数であり，
+$\beta \in (0, 1]$とする．
+$Z=\int_{\Theta} \exp(-\beta H(\theta))\pi(\theta)\dd \theta$は正規化定数である．
+本節の目的は，$H(\cdot, D) = \sum_{x \in D} \ell(\cdot, x)$であるときに，
+Gibbs事後分布$G_{\beta, H(\cdot, D)}$が差分プライバシを満たす条件を調べることである．
+すなわち，$G_\beta: D \mapsto G_{\beta, H(\cdot, D)}$に対して不等式(\ref{eq:tail_1})を考える．
+
+本論文では，裾確率の評価は測度集中の一般論を利用して行うが，
+そこで損失関数の凸性やLipschitz性が重要な役割をもつ．
+$2$回連続微分可能な関数$f: \mathbb{R}^d \to \mathbb{R}$が$m(> 0)$-強凸であるとは，
+Hessian$\nabla^2 \ell = (\frac{\partial^2}{\partial \theta_i \partial\theta_j})_{1 \leq i,j \leq n}$について
+$\nabla^2 f \succeq m I$が成り立つことをいう．
+また，本論文では便宜上，凸関数であるが任意の$m>0$に対して$m$-強凸とならないとき，またそのときに限り
+$0$-強凸であるということとする．
+
+本論文では，次の仮定を満たすモデルについて考える．
+仮定\ref{asm:1}は基本的な仮定であり，全ての場合に共通して成り立つとする．
+仮定\ref{asm:2}および仮定\ref{asm:3}はどちらか一方が成り立つとする．
+\begin{asm}[基本的な仮定]
+\label{asm:1}
+パラメータ空間$\Theta \subset \mathbb{R}^d$，
+損失関数$\ell: \Theta \times \mathcal{X} \to \mathbb{R}_{\geq 0}$，
+事前分布$\pi \in \mathcal{M}(\Theta)$に関して，次のことが成り立つとする．
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $\Theta$は凸集合である． 
+\item $\ell(\cdot, x)$は$2$回連続微分可能であり，任意の$x \in \mathcal{X}$について$m_\ell$-強凸である．
+また，$-\log \pi(\theta)$は$2$回連続微分可能であり，$m_\pi$-強凸である．
+\end{enumerate}
+\end{asm}
+\begin{asm}[非強凸，Lipschitz損失]
+\label{asm:2}
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $m_\ell=0$かつ$m_\pi > 0$である．
+\item $x \in \mathcal{X}$を任意に固定したとき，$\ell(\cdot, x)$は$\Theta$上で
+$L$-Lipschitzである．
+\end{enumerate}
+\end{asm}
+\begin{asm}[強凸損失，有界パラメータ空間]
+\label{asm:3}
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $\Theta$は原点を中心としたコンパクトな球である．球の半径については後の定理で定める．
+\item $m_\ell > 0$かつ$m_\pi > 0$である．
+ただし，損失関数$\ell(\cdot, x)$は$\mathbb{R}^d$全体で定義されている$m_\ell$-強凸関数を$\Theta$上に制限したものであるとする．
+また，$\pi$は$\mathbb{R}^d$に台をもち$-\log\bar{\pi}$が$m_\pi$-強凸であるような測度$\bar{\pi}$を$\Theta$上に制限した有限測度であるとする．
+\item $\mathcal{X}$はある距離$d_X$について有界な集合であり，$R_X=\sup_{x, x^\prime} d_X(x, x^\prime)<\infty$であるとする．
+(ii)において，$\mathbb{R}^d$全体に損失関数を拡張し，Lebesgue測度に関する密度が
+$\exp(-\beta \sum_{i} \ell(\theta, x_i) - \log \bar{\pi}(\theta)$に比例するようにとった確率測度を$\bar{G}_{\beta, D}$とおく．
+このとき，ある有界な非負関数$\kappa(n, m_\ell, m_\pi, R_X)$が存在して，
+任意のデータセット$D\in \mathcal{X}^n$に対する平均$\mathbb{E}_{\bar{G}_{\beta,D}}[\theta]$が
+\begin{equation}
+\parallel \mathbb{E}_{\bar{G}_{\beta,D}}[\theta] \parallel_2 \leq \kappa(n, m_\ell, m_\pi, R_X)
+\end{equation}
+を満たす．
+\item $\sup_{x \in X} \sup_{\theta \in \Theta} \parallel \nabla \ell(\theta, x) \parallel_2 = L < \infty$である．
+特に，任意の$x\in \mathcal{X}$を固定したとき，$\ell(\cdot, x)$は$L$-Lipschitzである．
+\end{enumerate}
+\end{asm}
+
+以上の仮定に関するいくつかの注意点を述べる．
+仮定\ref{asm:1}について，本論文で考えるモデルは損失関数$\ell$および$-\log\pi$がともになめらかな凸関数であるものに限る．
+直感的には，$m_\ell > 0$は損失関数が$2$次関数よりも早く増大するということを意味する．
+よって，$\Theta$が非有界（例えば$\Theta=\mathbb{R}^d$）であるとき，
+$m_\ell>0$であることと$\ell$がLipschitzであることは一般に両立しない．
+そこで，考えているモデルを，$m_\ell=0$であって$\ell$がLipschitzである場合（仮定\ref{asm:2}），
+$m_\ell>0$であって$\Theta$が有界である場合（仮定\ref{asm:3}）の$2$通りに分類して議論する．
+仮定\ref{asm:3}の条件(iii)は複雑に見えるが，本質的には$\mathcal{X}$が有界であって，
+事後平均がハミング距離に関して離れすぎないための十分条件を与えたものである．
+一方，$m_\pi > 0$は常に仮定しておく．
+こちらは，ある程度縮小効果の強い事前分布を使うことによって，$\beta$を小さくしても事後分布の分散が
+大きくなりすぎないようにするためである．
+
+次の定理\ref{thm:1}は本論文における主結果であり，対数尤度比関数の裾確率の上界を与える．
+定理\ref{thm:1}および系\ref{cor:1}の証明は，概略のみ付録に示す．
+
+\begin{thm}[Lipschitz損失の場合]
+\label{thm:1}
+$D_1$, $D_2$は$\mathcal{X}^n$に属する$2$つのデータセットであり，$d_H(D_1, D_2)=1$であるとする．
+仮定\ref{asm:1}および仮定\ref{asm:2}が成り立つとする．
+このとき，次の(i), (ii)が成り立つ．
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $\beta \in (0, 1]$を固定する．
+このとき，任意の$t>0$に対して
+\begin{align}
+G_{\beta, D_1} \left \{
+\log \frac{\dd G_{\beta, D_1}}{\dd G_{\beta, D_2}} > D_{\mathrm{KL}}(G_{\beta, D_1}, G_{\beta, D_2}) + t
+\right \}
+\leq
+\exp \left(
+- \frac{m_\pi t^2}{8L^2\beta^2}
+\right)
+\label{eq:thm1_1}
+\end{align} 
+が成立する．
+
+\item 任意の$\beta \in (0, 1]$に対して，KLダイバージェンスは上界
+\begin{equation}
+D_{\mathrm{KL}}(G_{\beta, D_1}, G_{\beta, D_2}) \leq \frac{2 L^2 \beta^2}{m_\pi}
+\label{eq:thm1_2}
+\end{equation}
+をもつ．
+また，$\varepsilon > \frac{2 L^2 \beta^2}{m_\pi}$のとき
+\begin{align}
+G_{\beta, D_1} \left \{
+\log \frac{\dd G_{\beta, D_1}}{\dd G_{\beta, D_2}} > \varepsilon
+\right \}
+\leq
+\exp \left(
+- \frac{m_\pi}{8L^2\beta^2}
+\left(
+\varepsilon - \frac{2 L^2 \beta^2}{m_\pi}
+\right)^2
+\right)
+\label{eq:thm1_3}
+\end{align}
+が成り立つ．
+\end{enumerate}
+\end{thm}
+
+\begin{thm}[強凸損失の場合]
+\label{thm:2}
+$D_1$, $D_2$は$\mathcal{X}^n$に属する$2$つのデータセットであり，$d_H(D_1, D_2)=1$であるとする．
+仮定\ref{asm:1}および仮定\ref{asm:3}が成り立つとする．
+$\alpha > 1$を固定し，定義域の半径$R_\Theta$を
+\begin{equation}
+R_\Theta \geq \kappa(n, m_\ell, m_\pi, R_X) + \alpha \sqrt{\frac{d}{m_\pi}}
+\end{equation}
+ととる．
+（$R_\Theta$のとり方に依存して$L$も変化することに注意する．）
+このとき，次の(i), (ii)が成り立つ．
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $\beta \in (0, 1]$を固定する．
+このとき，任意の$t>0$に対して
+\begin{align}
+G_{\beta, D_1} \left \{
+\log \frac{\dd G_{\beta, D_1}}{\dd G_{\beta, D_2}} > D_{\mathrm{KL}}(G_{\beta, D_1}, G_{\beta, D_2}) + t
+\right \}
+\leq
+\exp \left(
+- \frac{(nm_\ell \beta + m_\pi) t^2}{8L^2 C(1+\log(\alpha^2/(\alpha^2-1)))\beta^2}
+\right)
+\label{eq:thm2_1}
+\end{align} 
+が成立する．
+ただし，$C>0$は普遍的な定数である．
+
+\item 任意の$\beta \in (0, 1]$に対して，KLダイバージェンスは上界
+\begin{align}
+D_{\mathrm{KL}}(G_{\beta, D_1}, G_{\beta, D_2}) &\leq&
+\frac{2 L^2 C(1+\log(\alpha^2/(\alpha^2-1))) \beta^2}{nm_\ell \beta + m_\pi}　\nonumber \\
+& =:& D_{+}(\beta, n, m_\ell, m_\pi, \alpha, L) = D_{+}
+\label{eq:thm2_2}
+\end{align}
+をもつ．
+また，$\varepsilon > D_+$のとき
+\begin{equation}
+G_{\beta, D_1} \left \{
+\log \frac{\dd G_{\beta, D_1}}{\dd G_{\beta, D_2}} > \varepsilon
+\right \}
+\leq
+\exp \left(
+- \frac{1}{4D_+}
+\left(
+\varepsilon - D_+
+\right)^2
+\right)
+\label{eq:thm2_3}
+\end{equation}
+が成り立つ.
+\end{enumerate}
+\end{thm}
+
+定理\ref{thm:1}と定理\ref{thm:2}を応用して，Gibbs事後分布が満たす$(\varepsilon, \delta)$-差分プライバシ
+に関する結果が得られる．
+
+\begin{cor}
+\label{cor:1}
+仮定\ref{asm:1}と仮定\ref{asm:2}が成り立つとする．
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item $\varepsilon>0$とする．
+\begin{equation}
+\beta < \sqrt{\frac{m_\pi \varepsilon}{2 L^2}}
+\end{equation}
+であるような$\beta$に対して，Gibbs事後分布$G_{\beta, D}$は
+$(\varepsilon, e^{-(1+\varepsilon)/4})$-差分プライバシを満たす．
+\item $\varepsilon>0$, $1 > \delta > 0$とする．
+\begin{equation}
+\beta \leq 
+\frac{\varepsilon}{2L}
+\sqrt{\frac{m_\pi}{1 + 2\log(1/\delta)}}
+\label{eq:beta_condition_2}
+\end{equation}
+であるような$\beta$に対して，Gibbs事後分布$G_{\beta, D}$は
+$(\varepsilon, \delta)$-差分プライバシを満たす．
+\end{enumerate}
+\end{cor}
+
+\begin{cor}
+\label{cor:2}
+仮定\ref{asm:1}と仮定\ref{asm:3}が成り立つとし，
+さらに定理\ref{thm:2}のように$R_\Theta$を定める．
+$\varepsilon >0, 1>\delta > 0$を与えたプライバシパラメータとする．
+このとき，ある定数$B=B(\varepsilon, \delta, n, m_\ell, m_\pi, \alpha)$が存在して，
+$\beta < B$のとき，Gibbs事後分布$G_{\beta, D}$は$(\varepsilon, \delta)$-差分プライバシを満たす．
+\end{cor}
+
+
+系\ref{cor:1}について，$m_\ell=0$かつ$m_\pi>0$の場合には，損失関数$\ell$が有界でない場合も含まれる．
+よって，定理\ref{thm:wang}--(i)が直接的に適用できないモデルにも，こちらが適用できる場合がある．
+その他に定理\ref{thm:wang}と異なるところは，強凸性パラメータ$m_\pi$によって$\beta$の設定可能な
+範囲が変化することである．
+これは，不自然な結果というわけではない．
+例えば，$\pi(\theta)$として正規事前分布を考えると，$m_\pi$を大きくすることは
+分散が小さい尖った事前分布を用いることに相当し，データセット$D$の変化に対して事後分布がよりロバストになるためと考えられる．
+
+一方，$m_\ell>0$の場合は，さきに述べた注意点のように，暗黙に$\Theta$の有界性を仮定することになる．
+このとき，$\ell$自体も有界になり，定理\ref{thm:wang}より
+Gibbs事後分布からのサンプリングが$\varepsilon$-差分プライバシを満たすようにできる．
+そのため，系\ref{cor:2}のような結果は，一見必要ないように感じられる．
+しかし，具体的なモデルで$B(\varepsilon, \delta, n, m_\ell, m_\pi, \alpha)$を計算することで，
+事前分布$\pi$やサンプルサイズ$n$が$\beta$の上界に与える影響を調べることができる．
+例えば，仮定\ref{asm:3}--(iii)における$\kappa$を$n$に依存しないようにとれる場合は，
+定理\ref{thm:2}における上界(\ref{eq:thm2_3})を計算することにより，$B$は$n$に関する単調増加関数
+となることが確認できる（4.1節および4.2節の例も参照）．
+したがって，サンプルサイズ$n$が大きいほど，$\beta$を大きく設定できるため，差分プライバシが満たしやすいということになる．
+このようなサンプルサイズと差分プライバシとの関係は，サブサンプリングに関する性質（\cite{Li2012}などを参照）が知られているが，
+本論文の結果ではサブサンプリングを行うことなく$\beta$の上界という形で直接的に与えられる．
+
+%標語的にまとめると次のように言える．
+%一般に，高温度（$\beta$が小さい）ほどプライバシが保護される．
+%このとき，$\beta$をどの程度小さく設定すればよいかは，$\varepsilon$, $\delta$の他に，
+%サンプルサイズ$n$，事前分布の凹性$m_\pi$によって決まる．
+%縮小効果が強い（$m_\pi$が大きい）事前分布を用いた場合，事後分布の形状がロバストになり，少ない努力でプライバシを保護できる．
+%また，損失関数が強凸であれば，人数が多い($n$が大きい)ほど$1$人あたりの寄与は少なくなり，
+%やはり少ない努力でプライバシを保護できる．
+
+\section{差分プライベート学習への応用}
+
+\subsection{ロジスティック回帰}
+
+$\mathcal{Z} = \{ z \in \mathbb{R}^d, \parallel z \parallel_2 \leq R \}$とし，
+データは説明変数$z \in \mathcal{Z}$と二値ラベル$y \in \{-1, 1\}$の組$x = (z,y)$であるとする．
+データセット$D=\{x_1, \ldots, x_n \}$が与えられたとき，線形分類器$f_{\theta}(z) = \mathrm{sgn}(a^\top z + b)$
+のパラメータ$\theta = (a,b)$, $a \in \mathbb{R}^d$, $b \in \mathbb{R}$を学習したい．
+
+$\theta$を決定する方法のひとつとして，$\ell_2$-正則化ロジスティック回帰を考える．
+すなわち，損失関数を
+\begin{equation}
+\ell_{\mathrm{LR}}(\theta, x) = \log(1 + \exp(-y (a^\top x + b)))
+\label{eq:logistic_loss}
+\end{equation}
+で定義し，
+\begin{equation}
+\hat{\theta}_{\mathrm{LR}} =
+\argmin_\theta \left \{
+\frac{1}{n}\sum_{i=1}^{n}\ell_{\mathrm{LR}}(\theta, x_i) + \frac{\lambda}{2}\parallel \theta \parallel_2
+\right \}
+\end{equation}
+によって識別面ベクトル$\hat{\theta}_{\mathrm{LR}}$を決定する．
+損失関数(\ref{eq:logistic_loss})は定義域上で非有界であることに注意する．
+ロジスティック回帰は決定的な推定量であるが，対応するGibbs事後分布として
+\begin{equation}
+G_{\beta, D}(\theta) \propto \exp \left(
+-\beta \sum_{i=1}^{n}\ell_{\mathrm{LR}}(\theta, x_i)
+\right)\phi_{d+1}(\theta \mid 0, \frac{1}{n\lambda} I)
+\label{eq:logistic_gibbs}
+\end{equation}
+を考えることができる．
+ただし，$\phi_k(\cdot \mid \mu, \Sigma)$は平均$\mu$，共分散行列$\Sigma$の$k$-次元正規分布の密度関数である．
+
+微分の計算により，$\ell_\mathrm{LR}$は$R$-Lipschitzであることがわかる．
+また，$-\log \phi_{d+1}(\theta \mid 0, \frac{1}{n\lambda} I)$は$n\lambda$-強凸である．
+よって，系\ref{cor:1}より，
+\begin{equation}
+\beta < \frac{\varepsilon}{2R}\sqrt{\frac{n\lambda}{1 + 2\log(1/\delta)}}
+\label{eq:logistic_bound}
+\end{equation}
+とすればGibbs事後分布(\ref{eq:logistic_gibbs})は$(\varepsilon, \delta)$-差分プライバシを満たす．
+(\ref{eq:logistic_bound})より，正則化パラメータ$\lambda$（事前分布の縮小の強さ）が大きいほど，
+またサンプルサイズ$n$が大きいほど，$\beta$の上界は大きくとれるため，
+差分プライバシ保証を容易に満たすことができることがわかる．
+これは直感とも合うが，指数メカニズムに基づく定理\ref{thm:wang}からは得られなかった知見である．
+
+\subsection{正規分布の制約モデルによる密度推定} \label{ssec:ex_normal}
+
+定理\ref{thm:2}の応用として，分散が既知の正規分布における平均パラメータの推定において，
+共役事前分布を用いた場合を考える．
+ただし，正規分布のように負の対数尤度が強凸である場合，定理\ref{thm:2}の適用のためには
+パラメータ空間を有界なところに制限した「制約モデル」を考える必要がある．
+
+簡単のため，$1$次元の場合の例を示す．
+データの空間$X$は既知の閉区間$X = [-a, a]$，$(a > 0)$であるとする．
+データセット$D$が与えられたとき，データを生成する確率分布を正規分布モデル
+$\{\phi(\cdot \mid \theta, \sigma^2), \: \theta \in \Theta \}$によって
+推定すること考える．
+ここで，$\Theta = [-b, b]$はパラメータの制約区間であり，$b>0$はあとで定義する．
+
+分散既知の正規分布モデルにおいて，平均に関する共役事前分布は正規分布である．
+そこで，上記の密度推定の問題において，$\theta$の事前分布として，
+正規分布$N(0, \tau^2)$を区間$\Theta$に制限した測度を用いることにする．
+
+通常の$\mathbb{R}$全体での推定を考えたとき，Gibbs事後分布は正規分布
+$N(\theta_{\beta, D}, \sigma^2_{\beta, D})$である．
+ただし
+\begin{equation}
+\theta_{\beta, D} = \frac{\frac{\beta}{\sigma^2} | \frac{1}{n} \sum_{i=1}^{n} x_i |}
+{\frac{\beta}{\sigma^2} + \frac{1}{n\tau^2}}
+\leq \frac{\frac{\beta}{\sigma^2} a}
+{\frac{\beta}{\sigma^2} + \frac{1}{n\tau^2}} \leq a,
+\end{equation}
+かつ
+\begin{equation}
+\sigma^2_{\beta, D} = \frac{1}{\frac{n\beta}{\sigma^2} + \frac{1}{\tau^2}} \leq \tau^2
+\end{equation}
+である．
+したがって，制約領域の半径を$b = a + \alpha \tau$と定めることにより，定理\ref{thm:2}を適用できる．
+
+$-\partial_\theta \log \phi (x \mid \theta, \sigma^2) = (\theta - x)/\sigma^2$に注意すると，
+$L=\sup_{x}\sup_{\theta}|-\partial_\theta \log \phi (x \mid \theta, \sigma^2)| \leq (a + b)/\sigma^2$
+である．
+これにより，定理\ref{thm:2}の裾確率の上界(\ref{eq:thm2_3})が計算できる．
+特に，系\ref{cor:2}の定数$B$が計算できる．
+簡単のため，$\sigma^2=1, \tau^2=1$とすると，(\ref{eq:thm2_2})はある$C^\prime>0$を用いて
+\begin{equation}
+D_+ = \frac{C^\prime \beta^2}{n\beta + 1}
+\end{equation}
+と書ける．
+\begin{equation}
+u_{\varepsilon, \delta} = \varepsilon + 2\log(1/\delta) - \sqrt{(\varepsilon + 2\log(1/\delta))^2 - \varepsilon^2}
+\end{equation}
+とおくと，初等的な計算により，
+\begin{equation}
+\beta \leq B = \frac{nu_{\varepsilon, \delta} + \sqrt{n^2u_{\varepsilon, \delta}^2 - 4u_{\varepsilon, \delta}C^\prime}}
+{2C^\prime}
+\label{eq:normal_ub}
+\end{equation}
+とすれば，Gibbs事後分布は$(\varepsilon, \delta)$-差分プライバシを満たすことがわかる．
+上界(\ref{eq:normal_ub})は$n$に関する増加関数となっていることに注意する．
+
+また，この例の応用として，$1$次元のリッジ線形回帰に対応するGibbs事後分布からのサンプルが
+差分プライバシを満たすこともわかる．
+
+\subsection{MCMCによる近似とプライバシ}
+
+損失関数および事前分布が与えられていたとしても，Gibbs事後分布を解析的に計算することが困難な
+場合がある．
+特に，パラメータ空間が高次元の場合，Gibbs事後分布からのサンプルを得るためには
+近似手法としてマルコフ連鎖モンテカルロ法 (MCMC) を用いることが一般的である．
+しかし，MCMCは対象となる分布に漸近的に収束するサンプリング手法であるため，
+有限回の反復によって得られるサンプルの分布は，真に求めたい事後分布とは一般には異なる．
+そのため，Gibbs事後分布で成立していた差分プライバシ保証が破綻する可能性がある．
+
+一方，全変動距離の意味でGibbs事後分布を一様に近似することができれば，
+差分プライバシ保証を保存することが可能である．
+次の定理は，$\varepsilon$-差分プライバシに関して知られている結果\cite{Wang2015b,Dwork2014}
+を$(\varepsilon, \delta)$-差分プライバシに関して述べ直したものである．
+\begin{thm}
+\label{thm:3}
+$\rho: \mathcal{D} \to \mathcal{M}(\Theta)$は$(\varepsilon, \delta)$-差分プライバシを満たす
+アルゴリズムとする．
+各データセット$D$に対して，全変動距離$d_\mathrm{TV}$の意味で$\rho(D)$を$\gamma$-近似する，
+すなわち
+\begin{equation}
+d_\mathrm{TV}(\rho(D), \rho^\prime(D)) \leq \gamma
+\end{equation}
+を満たすアルゴリズム$\rho^\prime$が存在したとする．
+このとき，$\rho^\prime$は$(\varepsilon, \delta + (\ee^\varepsilon + 1)\gamma)$-差分プライバシを満たす．
+\end{thm}
+これにより，MCMCの第$k$ステップにおける分布と定常分布の全変動距離が定数で抑えられるような
+有限の$k$（ミキシング時刻）を知ることができれば，本論文の定理との組み合わせで差分プライバシを満たすアルゴリズムが構成できる．
+ミキシング時刻に関する研究は古くから存在する\cite{Rosenthal1995}にも関わらず，
+厳密な定数も含めて収束レートが計算できる状況は依然として限られている．
+例えば，Stochastic gradient Langevin dynamics (SGLD)\cite{Welling2011,Sato2014}など，
+機械学習の分野で頻繁に用いられる手法の厳密な収束レートを議論することは現状では難しい．
+Langevin dynamicsの収束レートに関する研究としては\cite{BoHa2013}がある．
+
+\section{結論}
+本論文では，対数尤度比の測度集中不等式を証明することにより，
+Gibbs事後分布からのサンプルが$(\varepsilon, \delta)$-差分プライバシを満たす条件を解析した．
+特に，対数尤度比の裾確率のバウンド(\ref{eq:thm1_3})(\ref{eq:thm2_3})によって，
+サンプルサイズ$n$および事前分布の縮小の強さ$m_\pi$がプライバシ保護強度に与える影響についての示唆が得られた．
+さらに，定理\ref{thm:1}，定理\ref{thm:2}の直接的な応用として，
+差分プライバシを満たすいくつかの新しいアルゴリズムが得られた．
+
+%(今後の課題)
+%本論文の定理の証明では，損失関数と事前分布の強凸性および対数尤度比のLipschitz性の条件を仮定したことが重要であった．
+%一方，強凸性とは限らない損失（Hessianの固有値が負の下界をもつ場合）や，
+%Lipschitzとは限らない関数に関する測度集中不等式\cite{Adamczak2014}も知られている．
+%そのような結果を利用することで，より広いモデルで差分プライバシの条件を調べることが可能と考えられる．
+
+%また，Gibbs事後分布はPAC-Bayes学習と密接に関係があり，それらの方法を利用することにより
+%本論文で示したアルゴリズムに対するリスクバウンドが得られることが期待される．
+%例えば，\ref{ssec:ex_normal}節で示したようなランダム密度推定のアルゴリズムのリスクバウンドは
+%\cite{Zhang2006}で与えられている．
+%本論文で提案された差分プライバシ保証の解析と，PAC-Bayes学習の手法を組み合わせることによって，
+%プライバシ保護と学習精度の理論的なトレードオフを解析することは今後の課題である．
+
+
+%\bibliographystyle{tieice}
+%\bibliography{ibisokinawa}
+
+\appendix
+\section{定理の証明}
+
+\subsection{測度集中に関する理論}
+
+定理\ref{thm:1}および定理\ref{thm:2}で利用する測度集中の理論について簡単に説明する．
+$(X, \mathcal{B}, \mu)$を確率空間とする．
+ただし$X$は距離空間の構造をもつとし，$\mathcal{B}$はBorel $\sigma$-fieldとする．
+また，$X$上の実数値関数$f$に対して，距離構造に基いて一般化された勾配$\nabla f$が定義されているとする．
+以下では，具体的に$X \subset \mathbb{R}^d$で$\nabla f$は通常の意味での微分である場合を扱う．
+
+非負の実数値関数$f$に対して，$\mu$に関するエントロピーを
+\begin{equation}
+\mathrm{Ent}_{\mu} (f)=\mathbb{E}_{\mu} [f \log f] - \mathbb{E}_{\mu} [f] \log \mathbb{E}_{\mu} [f]
+\end{equation}
+によって定義する．（右辺の積分が存在する場合に定義される．）
+また，$f$のエネルギーを
+\begin{equation}
+\mathcal{E}(f) = \mathbb{E}_\mu \parallel \nabla f \parallel_{2}^{2}
+\end{equation}
+によって定義する．
+ある定数$D_\mathrm{LS} > 0$が存在して，エントロピーおよびエネルギーが定義される任意の$f$に対して
+\begin{equation}
+\mathrm{Ent}_\mu(f^2) \leq 2 D_\mathrm{LS} \mathcal{E}(f)
+\label{eq:log_sobolev}
+\end{equation}
+が成立するとき，確率測度$\mu$は対数Sobolev不等式を満たすという．
+対数Sobolev不等式が成り立つとき，任意の$L$-Lipschitz関数$F: X \to \mathbb{R}$の測度集中不等式
+\begin{equation}
+\mu \{ F \geq \mathbb{E}_\mu [F] + t \} \leq
+\exp \left ( \frac{-t^2}{2L^2 D_\mathrm{LS}}\right), \quad \forall t > 0
+\label{eq:lips_concentration}
+\end{equation}
+が成り立つことがよく知られている\cite{Boucheron2013,Ledoux1999}．
+
+対数Sobolev不等式の例を挙げる．
+$X=\mathbb{R}^d$とし，
+$U: \mathbb{R}^d \to \mathbb{R}$を$C^2$-級で$\ee^{-U}$がLebesgue可積分である関数とする．
+このとき，ポテンシャル関数$U$をもつGibbs分布$G_U$の密度関数を
+\begin{equation}
+\dd G_U (x) = Z^{-1} \ee ^{-U(x)} \dd x 
+\label{eq:gibbs}
+\end{equation}
+によって定義する．
+ここで，ポテンシャル関数$U$が$m$-強凸である場合には，対数Sobolev不等式(\ref{eq:log_sobolev})が
+定数$D_{\mathrm{LS}} = m^{-1}$として成立することが知られている\cite{Ledoux1999}．
+例えば，$U=\parallel x \parallel_{2}^{2} / 2$とすると(\ref{eq:gibbs})は標準正規分布
+と一致するが，この場合は$D_{\mathrm{LS}}=1$となり，Grossの対数Sobolev不等式と呼ばれる．
+
+$\mathbb{R}^d$上の確率測度$\mu$が定数$D_\mathrm{LS}$で対数Sobolev不等式を満たすとき，
+部分集合$X\subset \mathbb{R}^d$上に$\mu$を制限した測度$\mu |_{X}$もやはり対数Sobolev不等式
+を満たすかどうか知りたい場合がある．
+この性質は対数Sobolev不等式の安定性と呼ばれ，次の結果が知られている．
+\begin{thm}[\cite{Milman2012}, Corollary 3.9]
+\label{thm:stability}
+$\mathbb{R}^d$上のGibbs分布(\ref{eq:gibbs})が定数$D_\mathrm{LS}$で対数Sobolev不等式を
+満たすとする．
+$X \subset \mathbb{R}^d$は凸集合であって，ポテンシャル関数$U$の$X$への制限$U|_X$は凸関数であり，
+\begin{equation}
+G_U(X) = p > 0
+\end{equation}
+が成り立つとする．
+このとき，$G_U$を$X$上に制限して規格化した測度$G_U^\prime = G_U|_X / G_U(X)$は，
+定数$C(1+\log(1/p))D_\mathrm{LS}$で対数Sobolev不等式を満たす．
+ここで，$C > 0$は普遍的な定数である．
+\end{thm}
+本論文では，定理\ref{thm:stability}に現れる定数$C$は既知のものとして扱う．
+詳細については\cite{Milman2012}を参照されたい．
+
+式(\ref{eq:log_sobolev})において，エントロピーの代わりに分散を評価した式
+\begin{equation}
+\mathrm{Var}_\mu (f) \leq D_{\mathrm{Poin}} \mathcal{E}(f)
+\label{eq:poin}
+\end{equation}
+をPoincar\'{e}不等式という．
+Poincar\'{e}不等式は対数Sobolev不等式より弱い主張であることが知られている．
+実際，確率測度$\mu$が定数$D_\mathrm{LS}$で対数Sobolev不等式を満たすとき，
+$\mu$は定数$D_\mathrm{Poin} = D_\mathrm{LS}/2$でPoincar\'{e}不等式を満たす\cite{Aida1994}．
+
+\subsection{定理\ref{thm:1}の証明}
+
+仮定より$\Theta = \mathbb{R}^d$である．
+Gibbs事後分布$G_{\beta, D}$は，Gibbs分布(\ref{eq:gibbs})において
+$U(\theta) = \beta \sum_{i=1}^{n} \ell(\theta, x_i) -\log \pi (\theta)$としたもの
+であることに注意する．
+仮定\ref{asm:2}--(i)より，$U$は$m_\pi$-強凸関数であるから，対数Sobolev不等式(\ref{eq:log_sobolev})
+を定数$m_\pi ^{-1}$で満たす．
+
+$D_1, D_2 \in \mathcal{X}^n$を$d_H(D_1, D_2)=1$である$2$つのデータセットとする．
+一般性を失うことなく，$D_1$と$D_2$は第$1$成分でのみ異なる，
+すなわち$D_1=(x_1, x_2, \ldots, x_n)$，$D_2=(x_1^\prime, x_2, \ldots, x_n)$としてよい．
+このとき，仮定\ref{asm:2}--(ii)より
+\begin{equation}
+\left \lVert \nabla \log \frac{\dd G_{\beta, D_1}}{\dd G_{\beta, D_2}} \right \rVert_{2}
+= \beta \parallel \nabla (\ell(\theta, x_1) - \ell(\theta, x_1^\prime)) \parallel_2 \leq 2\beta L
+\end{equation}
+であるから，対数尤度比は$2\beta L$-Lipschitzである．
+よって，対数Sobolev不等式が成り立つ空間での測度集中の式(\ref{eq:lips_concentration})より，
+(\ref{eq:thm1_1})を得る．
+
+次に，KLダイバージェンスの上界(\ref{eq:thm1_2})を求める．
+対数Sobolev不等式(\ref{eq:log_sobolev})が成り立つとき，
+$L$-Lipschitz関数$f$に対して
+\begin{align}
+\mathrm{Ent}_{\mu}[\ee^{f}] &\leq& \frac{D_\mathrm{LS}}{2} \mathbb{E}_{\mu}\left[\lVert  \nabla f  \rVert_{2}^{2} \ee^f \right]
+\leq \frac{D_\mathrm{LS}L^2}{2}\mathbb{E}_{\mu} [\ee ^f ]
+\label{eq:ent_ub}
+\end{align}
+が成り立つことに注意する．
+(\ref{eq:ent_ub})に$e^f = \dd G_{\beta, D_1} / \dd G_{\beta, D_2}$を代入することにより(\ref{eq:thm1_2})が得られる．
+
+\subsection{定理\ref{thm:2}の証明（概略）}
+
+仮定\ref{asm:3}--(ii)より，Gibbs事後分布をGibbs分布とみなしたときのポテンシャルは，
+$\mathbb{R}^d$上に$n m_\ell \beta + m_\pi$-強凸となるように拡張される．
+このポテンシャルをもつ$\mathbb{R}^d$上のGibbs分布を$\bar{G}_{\beta, D}$とおく．
+$\bar{G}_{\beta, D}(\Theta) \geq p$であるとき，定理\ref{thm:stability}より，
+Gibbs事後分布$G_{\beta, D}$は定数$C(1 + \log(1/p))/(n m_\ell \beta + m_\pi)$で
+対数Sobolev不等式を満たす．
+
+そこで，任意の$D$に対して，$\bar{G}_{\beta, D}(\Theta)$が一様な下界をもつように$\Theta$の半径を
+定めることを考える．
+今，仮定\ref{asm:3}--(iii)より，$\bar{G}_{\beta, D}(\Theta)$の平均は上界$\kappa$をもつ．
+また，Poincar\'{e}不等式(\ref{eq:poin})より，分散は$d/(nm_\ell \beta + m_\pi) \leq d/m_\pi$
+で上から抑えられる．
+よって，定理のように$R_\Theta$を定めれば，Chebyshevの不等式から，任意の$D$に対して
+$\bar{G}_{\beta, D}(\Theta) \geq　1 - \alpha^{-2}$が成り立つ．
+ゆえに，Gibbs事後分布$G_{\beta, D}$は定数
+\begin{equation}
+\frac{C(1 + \log(\alpha^2/(\alpha^2-1)))}{n m_\ell \beta + m_\pi}
+\end{equation}
+で対数Sobolev不等式を満たす．
+あとは，定理\ref{thm:1}と同様の議論によって，測度集中不等式(\ref{eq:thm2_1})を得る．
+
+\subsection{定理\ref{thm:3}の証明}
+
+$\mu_i, \mu_i^\prime$，$(i=1,2)$を同じ測度空間で定義された確率測度とし，
+$d_\mathrm{TV}(\mu_i, \mu_i^\prime) \geq \gamma$， $(i=1,2)$，
+および任意の可測集合$A$に対し
+\begin{equation}
+\mu_1^\prime(A) \leq \ee^\varepsilon \mu_2^\prime(A) + \delta
+\end{equation}
+が成り立つとする．
+このとき，
+\begin{align}
+\mu_1(A) \leq \mu_1^\prime(A)+ \gamma \leq \ee^\varepsilon \mu_2^\prime(A) + \delta + \gamma \nonumber \\
+\leq \ee^\varepsilon \mu_2(A) + (\ee^\varepsilon + 1)\gamma + \delta
+\end{align}
+が成り立つことから主張を得る．
+\end{document}

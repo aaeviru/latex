@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: rinko_slide.aux
+The style file: alpha.bst
+Database file #1: zotero.bib
+I was expecting a `,' or a `}'---line 232 of file zotero.bib
+ :     
+ :     year = {2006}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 406 of file zotero.bib
+ :  
+ :  year = {2009}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 2 entries,
+            2543 wiz_defined-function locations,
+            576 strings with 4975 characters,
+and the built_in function-call counts, 1097 in all, are:
+= -- 113
+> -- 52
+< -- 2
++ -- 18
+- -- 17
+* -- 87
+:= -- 179
+add.period$ -- 8
+call.type$ -- 2
+change.case$ -- 13
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 41
+empty$ -- 76
+format.name$ -- 19
+if$ -- 229
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 14
+num.names$ -- 8
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 38
+stack$ -- 0
+substring$ -- 72
+swap$ -- 12
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 0
+while$ -- 12
+width$ -- 3
+write$ -- 32
+(There were 2 error messages)
