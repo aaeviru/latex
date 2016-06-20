@@ -1,4 +1,4 @@
-\documentclass{jarticle}
+\documentclass{jsarticle}
 
 \usepackage{graphicx}
 \usepackage{latexsym}
@@ -26,14 +26,19 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-プライバシー
+テキスト検索の質問から個人情報や企業情報が漏洩する可能性があります．
+既存研究\cite{pang_embellishing_2010}では質問のある種の匿名性（否認可能性）を保証し，検索の精度と再現率を保持できるテキスト検索システムを提案した．
+その検索システムはユーザーの真の質問に混ざるデミー単語を生成するメカニズムと真の質問の単語だけの暗号化した関連性スコアを計算できる検索スキームから成る．
+
+質問が持つ主要な意味がデミーから真の質問の単語を分別できる鍵である．本発表では\cite{pang_embellishing_2010}に提案したテキスト検索システムに対して新たな攻撃手法，主意味攻撃を提案し，特許データベースとを用いて提案手法を評価する．
 \end{abstract}
 
 \section{はじめに}
 \section{既存研究}
 \section{プライバシー分析}
-\section{提案手法}
+\section{主意味攻撃}
 \section{実験結果}
+\bibliographystyle{plain}
 \bibliography{zotero}
 
 \end{document}
