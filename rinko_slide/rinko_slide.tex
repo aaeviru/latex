@@ -89,7 +89,25 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{質問ベース検索}
+\begin{frame}{特許検索質問}
+	\fontsize{10pt}{7.2}\selectfont
+	\begin{exampleblock}{メタノールを燃料とする車載用燃料電池システムおよび車}
+	メタノール 水蒸気 反応 水素 透過 膜 自立 燃料 電池 システム 供給 ガス \\ アノード カソード 空気 排出
+	\end{exampleblock}
+	\fontsize{14pt}{7.2}\selectfont
+	\begin{block}{}
+    \begin{itemize}
+        \item 検索質問は単語(名詞)の集合である
+        \item 質問に含む単語数が多い
+		\begin{itemize}
+			\item ウェブ検索:2.35 特許検索:20.1
+		\end{itemize}
+		\item 専門用語が多い
+    \end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{テキスト検索}
 \begin{columns}[t]
     \begin{column}{0.8\textwidth} % 横幅の30％
         \includegraphics[width=\columnwidth]{photo1.png}
@@ -97,8 +115,8 @@
 \end{columns}
     \begin{block}{}
     \begin{itemize}
-        \item Q:検索質問
-        \item R(Q):質問Qの検索結果
+        \item 検索質問$Q$:単語の集合
+        \item 質問$Q$の検索結果$R(Q)$:文章の集合
     \end{itemize}
     \end{block}
 \end{frame}
@@ -111,133 +129,34 @@
     \end{columns}
 	\begin{block}{} 
 		\begin{itemize}
-			\item 複数の質問を混ぜて検索する
+			\item 真の質問と$K-1$個真の質問と区別できないダミー質問と同時に検索する
+			\item サーバーが真の質問を見つける確率が$1/k$
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\begin{frame}{Prive Information Retrieval\cite{ostrovsky_survey_2007}}
-	\begin{columns}[t]
-		\begin{column}{0.8\textwidth} % 横幅の30％
-			\includegraphics[width=\columnwidth]{rk5.png}
+\begin{frame}{Obfuscation Search:例}
+    \begin{columns}[t]
+        \begin{column}{1\textwidth} % 横幅の30％
+            \includegraphics[width=\columnwidth]{rk4.png}
 		\end{column}
-	\end{columns}
+    \end{columns}
 	\begin{block}{} 
 		\begin{itemize}
-			\item 暗号などの手法を用いて質問の内容を完全に隠す
+			\item 実践的には長い質問に対応できない
+			\item 質問$q'$を使うことより検索の精度と再現率が下がる
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\begin{frame}{凖同型暗号}
-	\begin{Definition}[凖同型暗号]
-		二つの暗号文 $Enc(m_1), Enc (m_2)$ が与えられた時に、平文や秘密鍵なしで $Enc( m_1 \circ m_2 )$ を計算できる暗号
-	\end{Definition}
-	\begin{Example}[加算ができる凖同型暗号]
-		$Enc(\cdot):$ 暗号化 \, $Dec(\cdot):$復号 \\
-		$ Dec(Enc(m_1) \cdot Enc (m_2)) = m_1 + m_2$
-	\end{Example}
-\end{frame}
-\begin{frame}{凖同型暗号}
-\fontsize{12pt}{7.2}\selectfont
-    \begin{columns}[t]
-        \begin{column}{0.5\textwidth}
-			\begin{block}{ユーザー} 
-			\begin{columns}[t]
-				\begin{column}{0.8\textwidth}
-				\begin{block}{質問生成}
-				\begin{algorithmic}[1]
-					\STATE Input:$i^*,n$
-					\FOR{$i = 1, \dots, n$}
-					\IF{$i == i^*$}
-					\STATE {$ q_i = Enc(1)$}
-					\ELSE
-					\STATE{$ q_i =Enc(0)$}
-					\ENDIF
-					\ENDFOR
-					\RETURN $Q = \{q_1, \dots, q_n\}$
-				\end{algorithmic}
-				\end{block}
-				\begin{block}{復号}
-				\begin{algorithmic}[1]
-					\STATE input:$R$
-					\RETURN $Dec(R)$
-				\end{algorithmic}
-				\end{block}
-				\end{column}
-			\end{columns}
-			\end{block}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-			\begin{block}{サーバー} 
-			\begin{columns}[t]
-				\begin{column}{0.8\textwidth}
-				\begin{block}{結果計算}
-				\begin{algorithmic}[1]
-					\STATE Input:$Q,\{x_1, \dots, x_n \}$
-					\STATE $R = 0$
-					\FOR{$i = 1, \dots, n$}
-					\STATE $R = R \cdot q_i^{x_i}$
-					\ENDFOR
-					\RETURN $R$
-				\end{algorithmic}
-				\end{block}
-				\end{column}
-			\end{columns}
-			\end{block}
-			\begin{block}{Note}
-				$m_1 = m_2 \nRightarrow Enc(m_1) = Enc(m_2)$ \\
-				$Dec(R) = \sum_{x_i = 1}Dec(q_i) = x_{i^*}$
-			\end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{性能}
-	\begin{columns}[t]
-	\begin{column}{0.8\textwidth}
-	\begin{exampleblock}{}
-    \begin{tabular}{cccc}
-    \noalign{\hrule height 1pt}
-     & OBS & OBS+PIR & PIR  \\
-    \hline
-    サーバーの協力 & 不要 & ? & 必要 \\
-    安全性 & 弱い & ? & 強い \\
-    スピード & 速い & ? & 遅い \\
-    \noalign{\hrule height 1pt}
-    \end{tabular}
-	\end{exampleblock}
-	\end{column}
-	\end{columns}
-	\begin{block}{}
-		安全性はOBSより強い、スピードはPIRより速い中間手法がほしい
-	\end{block}
-\end{frame}
-
-\begin{frame}{特許検索クエリ}
-	\fontsize{10pt}{7.2}\selectfont
-	\begin{exampleblock}{メタノールを燃料とする車載用燃料電池システムおよび車}
-	メタノール 水蒸気 反応 水素 透過 膜 自立 燃料 電池 システム 供給 ガス \\ アノード カソード 空気 排出
-	\end{exampleblock}
-	\fontsize{14pt}{7.2}\selectfont
-	\begin{block}{}
+\begin{frame}{目標}
+    \begin{block}{}
     \begin{itemize}
-        \item 単語数が多い
-        \item 専門用語が多い
+        \item 長い質問に対応できる
+        \item 専門用語が多いダミーを生成できる
+		\item 検索の精度と再現率を維持できる
     \end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}{国際特許分類}
-	\begin{exampleblock}{\center A61C 5/08A}
-	\begin{tabular}{cc}
-	セクション:A & 健康および娯楽 \\
- 	サブセクション : 61 & 医学または獣医学:衛生学 \\
- 	クラス: C & 歯科:口腔または歯科衛生 \\
- 	メイングループ:5 & 歯の充填または被覆 \\
- 	サブグループ:08 & 歯冠:その製造;口中での歯冠固定 \\
-	\end{tabular}
-	\end{exampleblock}
+    \end{block}
 \end{frame}
 
 \section{既存研究}
@@ -271,7 +190,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{質問検索}
+\begin{frame}{テキスト検索}
 \fontsize{12pt}{7.2}\selectfont
 	\begin{columns}[t]
 		\begin{column}{0.8\textwidth} % 横幅の30％
@@ -283,6 +202,20 @@
 		質問$Q$に対して文章$d_j$のスコア:$s_{j}=\sum_{i \in Q}s_{ij}$ \\
 		スコアが上位$m$個にある文章を質問$Q$の検索結果として返す
 	\end{block}
+\end{frame}
+
+\begin{frame}{凖同型暗号}
+	\begin{Definition}[凖同型暗号]
+		二つの暗号文 $Enc(m_1), Enc (m_2)$ が与えられた時に、平文や秘密鍵なしで $Enc( m_1 \circ m_2 )$ を計算できる暗号
+	\end{Definition}
+	\begin{Example}[加算ができる凖同型暗号]
+		$E(\cdot):$ 暗号化 \, $D(\cdot):$復号 \\
+		\begin{itemize}
+			\item ランダム性:$E(m) \neq E(m)$
+			\item $ E(m_1) \cdot E (m_2) = E(m_1 + m_2) $
+			\item $ E(m)^q = E(m \cdot q) , \, q \in \mathbb{Z}^+$
+		\end{itemize}
+	\end{Example}
 \end{frame}
 
 \begin{frame}{質問検索-ETS}
@@ -300,8 +233,8 @@
 			$$
 	\end{minipage}
 	\begin{block}{}
-		単語$W_i^{(k)}$に対して文章$d_j$のスコア:$s'_{ikj}=E(u_i^{(k)})^{(s_{ikj})}$ \\
-		質問$Q$に対して文章$d_j$のスコア:$s_{j}=\prod_{i,k \in Q}s'_{ikj}$ \\
+		単語$W_i^{(k)}$に対して文章$d_j$のスコア:$s'_{ikj}=E(u_i^{(k)})^{(s_{ikj})}=E(u_i \cdot (s_{ikj}))$ \\
+		質問$Q$に対して文章$d_j$のスコア:$s_{j}=\prod_{i,k \in Q}s'_{ikj}=E(\sum_{i,k \in Q^*}s_{ikj})$ \\
 		スコアが$0$ではない文章を全部返す
 	\end{block}
 \end{frame}
@@ -435,6 +368,106 @@
 	\end{center}
 \end{frame}
 
+\begin{frame}{Prive Information Retrieval\cite{ostrovsky_survey_2007}}
+	\begin{columns}[t]
+		\begin{column}{0.8\textwidth} % 横幅の30％
+			\includegraphics[width=\columnwidth]{rk5.png}
+		\end{column}
+	\end{columns}
+	\begin{block}{} 
+		\begin{itemize}
+			\item 暗号などの手法を用いて質問の内容を完全に隠す
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{凖同型暗号}
+\fontsize{12pt}{7.2}\selectfont
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+			\begin{block}{ユーザー} 
+			\begin{columns}[t]
+				\begin{column}{0.8\textwidth}
+				\begin{block}{質問生成}
+				\begin{algorithmic}[1]
+					\STATE Input:$i^*,n$
+					\FOR{$i = 1, \dots, n$}
+					\IF{$i == i^*$}
+					\STATE {$ q_i = Enc(1)$}
+					\ELSE
+					\STATE{$ q_i =Enc(0)$}
+					\ENDIF
+					\ENDFOR
+					\RETURN $Q = \{q_1, \dots, q_n\}$
+				\end{algorithmic}
+				\end{block}
+				\begin{block}{復号}
+				\begin{algorithmic}[1]
+					\STATE input:$R$
+					\RETURN $Dec(R)$
+				\end{algorithmic}
+				\end{block}
+				\end{column}
+			\end{columns}
+			\end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+			\begin{block}{サーバー} 
+			\begin{columns}[t]
+				\begin{column}{0.8\textwidth}
+				\begin{block}{結果計算}
+				\begin{algorithmic}[1]
+					\STATE Input:$Q,\{x_1, \dots, x_n \}$
+					\STATE $R = 0$
+					\FOR{$i = 1, \dots, n$}
+					\STATE $R = R \cdot q_i^{x_i}$
+					\ENDFOR
+					\RETURN $R$
+				\end{algorithmic}
+				\end{block}
+				\end{column}
+			\end{columns}
+			\end{block}
+			\begin{block}{Note}
+				$m_1 = m_2 \nRightarrow Enc(m_1) = Enc(m_2)$ \\
+				$Dec(R) = \sum_{x_i = 1}Dec(q_i) = x_{i^*}$
+			\end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{性能}
+	\begin{columns}[t]
+	\begin{column}{0.8\textwidth}
+	\begin{exampleblock}{}
+    \begin{tabular}{cccc}
+    \noalign{\hrule height 1pt}
+     & OBS & OBS+PIR & PIR  \\
+    \hline
+    サーバーの協力 & 不要 & ? & 必要 \\
+    安全性 & 弱い & ? & 強い \\
+    スピード & 速い & ? & 遅い \\
+    \noalign{\hrule height 1pt}
+    \end{tabular}
+	\end{exampleblock}
+	\end{column}
+	\end{columns}
+	\begin{block}{}
+		安全性はOBSより強い、スピードはPIRより速い中間手法がほしい
+	\end{block}
+\end{frame}
+
+\begin{frame}{国際特許分類}
+	\begin{exampleblock}{\center A61C 5/08A}
+	\begin{tabular}{cc}
+	セクション:A & 健康および娯楽 \\
+ 	サブセクション : 61 & 医学または獣医学:衛生学 \\
+ 	クラス: C & 歯科:口腔または歯科衛生 \\
+ 	メイングループ:5 & 歯の充填または被覆 \\
+ 	サブグループ:08 & 歯冠:その製造;口中での歯冠固定 \\
+	\end{tabular}
+	\end{exampleblock}
+\end{frame}
 \section{参考文献}
 \begin{frame}[t,allowframebreaks]{Bibliography}
 \fontsize{8pt}{7.2}\selectfont
