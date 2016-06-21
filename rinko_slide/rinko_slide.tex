@@ -138,7 +138,7 @@
 \begin{frame}{Obfuscation Search:例}
     \begin{columns}[t]
         \begin{column}{1\textwidth} % 横幅の30％
-            \includegraphics[width=\columnwidth]{rk4.png}
+            \includegraphics[width=\columnwidth]{rk14.png}
 		\end{column}
     \end{columns}
 	\begin{block}{} 
@@ -276,7 +276,7 @@
 \begin{frame}{Wordnet}
 	\begin{columns}[t]
 		\begin{column}{1.0\textwidth} % 横幅の30％
-			\includegraphics[width=\columnwidth]{rk12.png}
+			\includegraphics[width=\columnwidth]{rk15.png}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -309,7 +309,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{Latent Semantic Analysis}
+\begin{frame}{Latent Semantic Indexing}
     \begin{columns}[c]
         \begin{column}{1.0\textwidth} % 横幅の30％
             \includegraphics[width=\columnwidth]{photo11.png}
@@ -317,15 +317,30 @@
     \end{columns}
 	\begin{block}{潜在的意味インデキシング}
 	\fontsize{12pt}{7.2}\selectfont
-		単語$\cdot$文書行列$A$を特異値分解$A = USV^T$し、$U$、$S$、$V$	の各列ベクトルを特異値が大きい順に
-		$K$個用いて$A$の低ランク近似$A_K=U_KS_KV_{K}^T$を得る。 \\
+		単語$\cdot$文書行列$A$の$(i,j)$番目の要素は$i$番目の単語が$j$番目の文章に出現した回数である　\\
+		$A$を特異値分解$A = USV^T$し、$U$、$S$、$V$	の各列ベクトルを特異値が大きい順に
+		$K$個用いて$A$の低ランク近似$A_K=U_KS_KV_{K}^T$を得る \\
 		このように低ランク分解によって、単語とトピックの関係を分析することができる \\
-		今回は同じ分類に属する全部の文章を1文章としてLSAを行った
+		$A_K$の$(i,j)$番目の要素は$i$番目の単語と$j$番目のトピックの関係を表す
 	\end{block}
 \end{frame}
 
+\begin{frame}{国際特許分類}
+	\begin{exampleblock}{\center A61C 5/08A}
+	\begin{tabular}{cc}
+	セクション:A & 健康および娯楽 \\
+ 	サブセクション : 61 & 医学または獣医学:衛生学 \\
+ 	クラス: C & 歯科:口腔または歯科衛生 \\
+ 	メイングループ:5 & 歯の充填または被覆 \\
+ 	サブグループ:08 & 歯冠:その製造;口中での歯冠固定 \\
+	\end{tabular}
+	\end{exampleblock}
+	\begin{block}{}
+		今回は同じ分類に属する全部の文章を1文章としてLSIを行った
+	\end{block}
+\end{frame}
 
-\begin{frame}{主意味攻撃}
+\begin{frame}{メイントピック攻撃}
 	\begin{exampleblock}{}
 	\fontsize{5pt}{7.2}\selectfont
 		\begin{tabular}{cccccccccccccccc}
@@ -339,18 +354,74 @@
 		\noalign{\hrule height 1pt}
 		\end{tabular}
 	\end{exampleblock}
-	\begin{block}{主意味攻撃}
-	\fontsize{12pt}{7.2}\selectfont
-	\begin{algorithmic}[1]
-		\REQUIRE 質問:$Q=\{t_i\},$単語のトピックベクトル集合$L=\{\ell_i\}$
-		\STATE $R=\phi, \, \ell=0$
-		\STATE $\ell=\sum_{t_i \in Q}\ell_{t_i}$
-		\STATE $maintopic=argmax_j \ell[j]$
-		\FORALL {$bk_k \in Q $}
-		\STATE $R=R \cup max_{t_i}q_{t_i}[maintopic]$
-		\ENDFOR
-		\RETURN $R$
-	\end{algorithmic}
+	\begin{block}{メイントピック攻撃}
+			\begin{itemize}
+			\item ダミーを含んでいる質問のメイントピックを確定する
+			\item 各単語バケツの中，メイントピックと一番関係強い単語を真の質問単語にする
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{主意味攻撃:例}
+	\begin{exampleblock}{}
+      		 \begin{columns}[c]
+           		\begin{column}{0.3\textwidth} % 横幅の30％
+               		\includegraphics[width=\columnwidth]{rk16.png}
+		   	\end{column}
+       		\begin{column}{0.68\textwidth} % 横幅の30％
+\fontsize{9pt}{7.2}\selectfont
+				\begin{tabular}{|c|c|c|c|}
+				\noalign{\hrule height 1pt}
+				  & $t_1$(食べ物) & $t_2$(音楽) & $t_3$(交通手段) \\
+				\noalign{\hrule height 1pt}
+				$w_1$(モーツァルト) & 0 & 1 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_2$(交響曲) & 0 & 1.5 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_3$(パン) & 1.5 & 0 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_4$(飛行機) & 0 & 0 & 1 \\
+				\noalign{\hrule height 1pt}
+				\end{tabular}
+			\end{column}
+		\end{columns}
+		ユーザー質問：モーツァルト 交響曲
+	\end{exampleblock}
+	\begin{block}{}
+   		$\ell_Q = \ell_{w_1} + \ell_{w_2} + \ell_{w_3} + \ell_{w_4} = (1.5,2.5,1)$ \\
+   		$Maintopic = argmax_t \ell_Q[t] = t_2 $
+	\end{block}
+\end{frame}
+
+\begin{frame}{主意味攻撃:例}
+	\begin{exampleblock}{}
+      		 \begin{columns}[c]
+           		\begin{column}{0.3\textwidth} % 横幅の30％
+               		\includegraphics[width=\columnwidth]{rk16.png}
+		   	\end{column}
+       		\begin{column}{0.68\textwidth} % 横幅の30％
+\fontsize{9pt}{7.2}\selectfont
+				\begin{tabular}{|c|c|c|c|}
+				\noalign{\hrule height 1pt}
+				  & $t_1$(食べ物) & $t_2$(音楽) & $t_3$(交通手段) \\
+				\noalign{\hrule height 1pt}
+				$w_1$(モーツァルト) & 0 & 1 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_2$(交響曲) & 0 & 1.5 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_3$(パン) & 1.5 & 0 & 0 \\
+				\noalign{\hrule height 1pt}
+				$w_4$(飛行機) & 0 & 0 & 1 \\
+				\noalign{\hrule height 1pt}
+				\end{tabular}
+			\end{column}
+		\end{columns}
+		ユーザー質問：モーツァルト 交響曲
+	\end{exampleblock}
+	\begin{block}{}
+   		$ \ell_{w_1}[t_2] = 1 > \ell_{w_4}[t_2] = 0 $ \\
+   		$ \ell_{w_3}[t_2] = 0 < \ell_{w_2}[t_2] = 1.5 $ \\
+   		$Q^* = \{$モーツァルト,交響曲$\} $
 	\end{block}
 \end{frame}
 
@@ -457,17 +528,6 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{国際特許分類}
-	\begin{exampleblock}{\center A61C 5/08A}
-	\begin{tabular}{cc}
-	セクション:A & 健康および娯楽 \\
- 	サブセクション : 61 & 医学または獣医学:衛生学 \\
- 	クラス: C & 歯科:口腔または歯科衛生 \\
- 	メイングループ:5 & 歯の充填または被覆 \\
- 	サブグループ:08 & 歯冠:その製造;口中での歯冠固定 \\
-	\end{tabular}
-	\end{exampleblock}
-\end{frame}
 \section{参考文献}
 \begin{frame}[t,allowframebreaks]{Bibliography}
 \fontsize{8pt}{7.2}\selectfont
@@ -476,3 +536,33 @@
 \end{frame}
 
 \end{document}
+
+
+\begin{frame}{主意味攻撃}
+	\begin{exampleblock}{}
+	\fontsize{5pt}{7.2}\selectfont
+		\begin{tabular}{cccccccccccccccc}
+		\noalign{\hrule height 1pt}
+		メタノール & 水蒸気 & 反応 & 水素 & 透過 & 膜 & $\dots$ & 燃料 \\
+		\hline
+		衡平 & グンバイムシ & 水力 & 上唇 & ドアロック & 沈殿 & $\dots$  & ベーキングパウダー \\
+		ルシタニア & ファースト & テアトル & 水素 & 認知心理学 & 膜 & $\dots$  & 運転者 \\
+		メタノール & 水蒸気 & 反応 & 長引かせること & 透過 & 組織図 & $\dots$  & 燃料 \\
+		分限者 & カランツ & 意味合 & 発明品 & イーサネットケーブル & 原稿 & $\dots$  & 黒泥土 \\
+		\noalign{\hrule height 1pt}
+		\end{tabular}
+	\end{exampleblock}
+	\begin{block}{主意味攻撃}
+	\fontsize{12pt}{7.2}\selectfont
+	\begin{algorithmic}[1]
+		\REQUIRE 質問:$Q=\{t_i\},$単語のトピックベクトル集合$L=\{\ell_i\}$
+		\STATE $R=\phi, \, \ell=0$
+		\STATE $\ell=\sum_{t_i \in Q}\ell_{t_i}$
+		\STATE $maintopic=argmax_j \ell[j]$
+		\FORALL {$bk_k \in Q $}
+		\STATE $R=R \cup max_{t_i}q_{t_i}[maintopic]$
+		\ENDFOR
+		\RETURN $R$
+	\end{algorithmic}
+	\end{block}
+\end{frame}
