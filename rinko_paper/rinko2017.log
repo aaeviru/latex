@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  20 JUN 2016 01:56
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  22 JUN 2016 00:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -216,30 +216,30 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 36.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 36.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 39.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 39.
  (./rinko2017.bbl
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 6.
+(Font)              scaled to size 9.60999pt on input line 5.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 6.
-LaTeX Font Info:    Font shape `JT1/gt/m/it' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 6.
-LaTeX Font Info:    Font shape `JY1/gt/m/it' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 6.
-)
+(Font)              scaled to size 9.60999pt on input line 5.
+
 [1
 
-] (./rinko2017.aux) ) 
+]) [2] (./rinko2017.aux) ) 
 Here is how much of TeX's memory you used:
- 1817 strings out of 493717
- 20567 string characters out of 6153662
- 79106 words of memory out of 5000000
- 5359 multiletter control sequences out of 15000+600000
- 16950 words of font info for 77 fonts, out of 8000000 for 9000
+ 1841 strings out of 493717
+ 20897 string characters out of 6153662
+ 82106 words of memory out of 5000000
+ 5379 multiletter control sequences out of 15000+600000
+ 19113 words of font info for 90 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 27i,6n,26p,270b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,26p,1165b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rinko2017.dvi (1 page, 2448 bytes).
+Output written on rinko2017.dvi (2 pages, 7280 bytes).
