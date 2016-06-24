@@ -60,8 +60,8 @@
     \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
 }
 
-\title{\bfseries 質問者のプライバシーを保護する特許デーだベース検索(研究紹介)}
-%\subtitle{\bfseries ─ 講演用スライド作成のために ─}
+\title{\bfseries 質問者のプライバシーを保護する特許デーだベース検索(文献し紹介)}
+
 \date{2016年7月1日}
 \author{中川研M2 胡 瀚林 \\ 指導教員：中川 裕志 教授}
 %\subject{PIR}
@@ -247,8 +247,18 @@
 		\end{column}
 	\end{columns}
 	\begin{block}{}
-		単語を意味ごとに分類するデータベース \\
-		リンクを持つsynsetを隣に並ぶことにより、すべての名詞を一列に並ぶ$:t_1 \, t_2 \, t_3 \, \dots \, t_{1000}$
+		単語を類義関係のセット(synset)でグループ化し、一つのsynsetが一つの概念に対応する \\
+		各synsetは上位下位関係などの関係で結ばれている
+	\end{block}
+\end{frame}
+
+\begin{frame}{バケツ作り}
+	\begin{block}{}
+		\begin{itemize}
+			\item 全てのsynsetを関係数が多い方から小さい方への順で処理する
+			\item 同じ単語を持つsynsetを隣に並べる
+			\item 反意関係，上位下位関係，全体部分関係をsynsetを隣に並べる
+		\end{itemize}
 	\end{block}
 \end{frame}
 
@@ -320,7 +330,7 @@
 		単語$\cdot$文書行列$A$の$(i,j)$番目の要素は$i$番目の単語が$j$番目の文章に出現した回数である　\\
 		$A$を特異値分解$A = USV^T$し、$U$、$S$、$V$	の各列ベクトルを特異値が大きい順に
 		$K$個用いて$A$の低ランク近似$A_K=U_KS_KV_{K}^T$を得る \\
-		このように低ランク分解によって、単語とトピックの関係を分析することができる \\
+		このように低ランク分解によって、単語とトピックの関係を分析できる \\
 		$A_K$の$(i,j)$番目の要素は$i$番目の単語と$j$番目のトピックの関係を表す
 	\end{block}
 \end{frame}
@@ -362,7 +372,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{主意味攻撃:例}
+\begin{frame}{メイントピック攻撃:例}
 	\begin{exampleblock}{}
       		 \begin{columns}[c]
            		\begin{column}{0.3\textwidth} % 横幅の30％
@@ -393,7 +403,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{主意味攻撃:例}
+\begin{frame}{メイントピック攻撃:例}
 	\begin{exampleblock}{}
       		 \begin{columns}[c]
            		\begin{column}{0.3\textwidth} % 横幅の30％
@@ -433,10 +443,51 @@
 		文章数 & $3,496,253$ \\
 		質問数 & $2,908$ \\
 		質問平均単語数 & $21.0$ \\
-		主意味攻撃成功率 & $90.1\%$ \\
+		メイントピック攻撃成功率 & $90.1\%$ \\
 		\noalign{\hrule height 1pt}
 		\end{tabular}
 	\end{center}
+\end{frame}
+
+\section{まとめ}
+\begin{frame}{まとめ}
+	\begin{block}{}
+		\begin{itemize}
+			\item 質問を単語ごとに分割し，暗号と組み合わせする手法
+			\item 質問のメイントピックを保護するのは難しい
+			\item Wordnetではなく他のダミー単語を生成するツールが欲しい
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{参考文献}
+\begin{frame}[t,allowframebreaks]{Bibliography}
+\fontsize{8pt}{7.2}\selectfont
+\bibliographystyle{alpha}
+\bibliography{zotero}
+\end{frame}
+
+\end{document}
+
+
+\begin{frame}{主意味攻撃}
+	\begin{exampleblock}{}
+	\fontsize{5pt}{7.2}\selectfont
+		\begin{tabular}{cccccccccccccccc}
+		\noalign{\hrule height 1pt}
+		メタノール & 水蒸気 & 反応 & 水素 & 透過 & 膜 & $\dots$ & 燃料 \\
+		\hline
+		衡平 & グンバイムシ & 水力 & 上唇 & ドアロック & 沈殿 & $\dots$  & ベーキングパウダー \\
+		ルシタニア & ファースト & テアトル & 水素 & 認知心理学 & 膜 & $\dots$  & 運転者 \\
+		メタノール & 水蒸気 & 反応 & 長引かせること & 透過 & 組織図 & $\dots$  & 燃料 \\
+		分限者 & カランツ & 意味合 & 発明品 & イーサネットケーブル & 原稿 & $\dots$  & 黒泥土 \\
+		\noalign{\hrule height 1pt}
+		\end{tabular}
+	\end{exampleblock}
+	\begin{block}{主意味攻撃}
+	\fontsize{12pt}{7.2}\selectfont
+
+	\end{block}
 \end{frame}
 
 \begin{frame}{Prive Information Retrieval\cite{ostrovsky_survey_2007}}
@@ -525,44 +576,5 @@
 	\end{columns}
 	\begin{block}{}
 		安全性はOBSより強い、スピードはPIRより速い中間手法がほしい
-	\end{block}
-\end{frame}
-
-\section{参考文献}
-\begin{frame}[t,allowframebreaks]{Bibliography}
-\fontsize{8pt}{7.2}\selectfont
-\bibliographystyle{alpha}
-\bibliography{zotero}
-\end{frame}
-
-\end{document}
-
-
-\begin{frame}{主意味攻撃}
-	\begin{exampleblock}{}
-	\fontsize{5pt}{7.2}\selectfont
-		\begin{tabular}{cccccccccccccccc}
-		\noalign{\hrule height 1pt}
-		メタノール & 水蒸気 & 反応 & 水素 & 透過 & 膜 & $\dots$ & 燃料 \\
-		\hline
-		衡平 & グンバイムシ & 水力 & 上唇 & ドアロック & 沈殿 & $\dots$  & ベーキングパウダー \\
-		ルシタニア & ファースト & テアトル & 水素 & 認知心理学 & 膜 & $\dots$  & 運転者 \\
-		メタノール & 水蒸気 & 反応 & 長引かせること & 透過 & 組織図 & $\dots$  & 燃料 \\
-		分限者 & カランツ & 意味合 & 発明品 & イーサネットケーブル & 原稿 & $\dots$  & 黒泥土 \\
-		\noalign{\hrule height 1pt}
-		\end{tabular}
-	\end{exampleblock}
-	\begin{block}{主意味攻撃}
-	\fontsize{12pt}{7.2}\selectfont
-	\begin{algorithmic}[1]
-		\REQUIRE 質問:$Q=\{t_i\},$単語のトピックベクトル集合$L=\{\ell_i\}$
-		\STATE $R=\phi, \, \ell=0$
-		\STATE $\ell=\sum_{t_i \in Q}\ell_{t_i}$
-		\STATE $maintopic=argmax_j \ell[j]$
-		\FORALL {$bk_k \in Q $}
-		\STATE $R=R \cup max_{t_i}q_{t_i}[maintopic]$
-		\ENDFOR
-		\RETURN $R$
-	\end{algorithmic}
 	\end{block}
 \end{frame}

@@ -13,11 +13,6 @@ M.~Barbaro and T.Z.Jr: ``A {Face} {Is} {Exposed} for {AOL} {Searcher} {No}.
 J.~Zobel and A.~Moffat: ``Inverted {Files} for {Text} {Search} {Engines}'', ACM
   Comput. Surv., {\bf 38}, 2 (2006).
 
-\bibitem{bethencourt_new_2006}
-J.~Bethencourt, D.~Song and B.~Waters: ``New constructions and practical
-  applications for private stream searching'', 2006 {IEEE} {Symposium} on
-  {Security} and {Privacy} ({S}\&{P}'06), IEEE, pp. 6--pp (2006).
-
 \bibitem{freedman_keyword_2005}
 M.~J. Freedman, Y.~Ishai, B.~Pinkas and O.~Reingold: ``Keyword search and
   oblivious pseudorandom functions'', Theory of {Cryptography} {Conference},
@@ -50,5 +45,13 @@ J.~Xu and W.~B. Croft: ``Query expansion using local and global document
   analysis'', Proceedings of the 19th annual international {ACM} {SIGIR}
   conference on {Research} and development in information retrieval, ACM, pp.
   4--11 (1996).
+
+\bibitem{benaloh_dense_1994}
+J.~Benaloh: ``Dense probabilistic encryption'', Proceedings of the workshop on
+  selected areas of cryptography, pp. 120--128 (1994).
+
+\bibitem{miller_wordnet:_1995}
+G.~A. Miller: ``{WordNet}: a lexical database for {English}'', Communications
+  of the ACM, {\bf 38}, 11, pp. 39--41 (1995).
 
 \end{thebibliography}

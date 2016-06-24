@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  21 JUN 2016 17:19
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  22 JUN 2016 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,87 +1287,86 @@ Overfull \hbox (13.50713pt too wide) detected at line 240
 File: photo14.png Graphic file (type bmp)
  <photo14.png> [18
 
+] [19
+
 ]
 File: rk11.png Graphic file (type bmp)
- <rk11.png> [19
+ <rk11.png> [20
 
 ]
 File: photo14.png Graphic file (type bmp)
- <photo14.png> [20
+ <photo14.png> [21
 
 ]
 File: rk15.png Graphic file (type bmp)
- <rk15.png> [21
+ <rk15.png>
+[22
 
 ]
 File: rk13.png Graphic file (type bmp)
+ <rk13.png> [23
 
-<rk13.png> [22
-
-] (./rinko_slide.toc) [23
+] (./rinko_slide.toc) [24
 
 ]
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 310.
+(Font)              scaled to size 4.74998pt on input line 320.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <5> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 310.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 320.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 4.74998pt on input line 310.
- [24
+(Font)              scaled to size 4.74998pt on input line 320.
+ [25
 
 ]
 File: photo11.png Graphic file (type bmp)
- <photo11.png> [25
+ <photo11.png> [26
 
 ]
-Overfull \hbox (16.51364pt too wide) in paragraph at lines 341--341
+Overfull \hbox (16.51364pt too wide) in paragraph at lines 351--351
 [][]  
  []
 
-[26
+[27
 
-] [27
+] [28
 
 ]
 File: rk16.png Graphic file (type bmp)
  <rk16.png>
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 394.
+(Font)              scaled to size 8.54997pt on input line 404.
 LaTeX Font Info:    Font shape `OT1/txss/m/it' in size <9> not available
-(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 394.
+(Font)              Font shape `OT1/txss/m/sl' tried instead on input line 404.
 
 LaTeX Font Info:    Font shape `OT1/txss/m/sl' will be
-(Font)              scaled to size 8.54997pt on input line 394.
+(Font)              scaled to size 8.54997pt on input line 404.
 
-Overfull \hbox (2.18202pt too wide) in paragraph at lines 394--394
-[][]  
- []
-
-[28
-
-]
-File: rk16.png Graphic file (type bmp)
- <rk16.png>
-Overfull \hbox (2.18202pt too wide) in paragraph at lines 426--426
+Overfull \hbox (2.18202pt too wide) in paragraph at lines 404--404
 [][]  
  []
 
 [29
 
-] [30
-
 ]
-File: rk5.png Graphic file (type bmp)
- <rk5.png> [31
+File: rk16.png Graphic file (type bmp)
+ <rk16.png>
+Overfull \hbox (2.18202pt too wide) in paragraph at lines 436--436
+[][]  
+ []
 
-] [32
+[30
+
+] [31
+
+] (./rinko_slide.toc) [32
 
 ] [33
 
 ] (./rinko_slide.toc) [34
 
-] (./rinko_slide.bbl
+]
+(./rinko_slide.bbl
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 (Font)              using `JT1/gt/m/n' instead on input line 7.
@@ -1391,24 +1390,24 @@ Missing character: There is no ^^93 in font txsssl!
 \tf@snm=\write8
 \openout8 = `rinko_slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 538.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 538.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
  (./rinko_slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 538.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 538.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 470.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 538.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 17818 strings out of 493717
- 339061 string characters out of 6153662
- 419010 words of memory out of 5000000
- 20843 multiletter control sequences out of 15000+600000
+ 17788 strings out of 493717
+ 338725 string characters out of 6153662
+ 412177 words of memory out of 5000000
+ 20813 multiletter control sequences out of 15000+600000
  54443 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 56i,16n,63p,393b,1606s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,15n,63p,393b,829s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rinko_slide.dvi (35 pages, 185768 bytes).
+Output written on rinko_slide.dvi (35 pages, 176320 bytes).
