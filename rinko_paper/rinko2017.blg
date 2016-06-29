@@ -3,47 +3,45 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: rinko2017.aux
 The style file: tieice.bst
 Database file #1: zotero.bib
-Warning--I didn't find a database entry for "bethEourt_new_2006"
-You've used 11 entries,
+You've used 14 entries,
             2358 wiz_defined-function locations,
-            617 strings with 5848 characters,
-and the built_in function-call counts, 4336 in all, are:
-= -- 384
-> -- 89
-< -- 9
-+ -- 37
-- -- 26
-* -- 210
-:= -- 491
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 11
+            633 strings with 6413 characters,
+and the built_in function-call counts, 5373 in all, are:
+= -- 460
+> -- 125
+< -- 11
++ -- 51
+- -- 37
+* -- 261
+:= -- 614
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 14
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 278
-empty$ -- 465
-format.name$ -- 52
-if$ -- 1116
+cite$ -- 14
+duplicate$ -- 347
+empty$ -- 576
+format.name$ -- 74
+if$ -- 1382
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 10
-newline$ -- 36
-num.names$ -- 11
-pop$ -- 100
+int.to.str$ -- 14
+missing$ -- 13
+newline$ -- 45
+num.names$ -- 14
+pop$ -- 129
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 327
+skip$ -- 405
 stack$ -- 0
-substring$ -- 259
-swap$ -- 80
-text.length$ -- 9
+substring$ -- 284
+swap$ -- 94
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 38
-width$ -- 13
-write$ -- 106
-is.kanji.str$ -- 134
-(There was 1 warning)
+while$ -- 45
+width$ -- 16
+write$ -- 133
+is.kanji.str$ -- 175

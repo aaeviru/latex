@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  24 JUN 2016 14:30
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.sjis) (TeX Live 2015/W32TeX) (preloaded format=platex 2016.4.9)  29 JUN 2016 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -252,24 +252,11 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 41.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 41.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 44.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 44.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 44.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 44.
-
-
-LaTeX Warning: Citation `bethEourt_new_2006' on page 1 undefined on input line 
-44.
-
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 44.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 44.
-[1
+ [1
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
@@ -277,30 +264,47 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 52.
  [2] [3]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 152.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 152.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 152.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 152.
 LaTeX Font Info:    Font shape `JT1/mc/m/sc' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 142.
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 154.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 142.
+(Font)              scaled to size 9.60999pt on input line 154.
 LaTeX Font Info:    Font shape `JY1/mc/m/sc' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 142.
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 154.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 142.
+(Font)              scaled to size 9.60999pt on input line 154.
 File: rk11.png Graphic file (type eps)
- <rk11.png> [4]
+ <rk11.png>
+[4] [5]
 File: rk13.png Graphic file (type eps)
- <rk13.png> [5] [6] [7] (./rinko2017.bbl [8])
-[9] (./rinko2017.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ <rk13.png> [6] [7]
+File: rk17.eps Graphic file (type eps)
+ <rk17.eps>
+File: rk18.eps Graphic file (type eps)
+ <rk18.eps>
+File: rk19.eps Graphic file (type eps)
+ <rk19.eps>
+File: rk20.eps Graphic file (type eps)
+ <rk20.eps> [8]
+[9]
+File: rk21.eps Graphic file (type eps)
+ <rk21.eps>
+File: rk22.eps Graphic file (type eps)
+ <rk22.eps> (./rinko2017.bbl [10] [11]) [12] (./rinko2017.aux) ) 
 Here is how much of TeX's memory you used:
- 2512 strings out of 493717
- 30337 string characters out of 6153662
- 98863 words of memory out of 5000000
- 6024 multiletter control sequences out of 15000+600000
+ 2534 strings out of 493717
+ 30540 string characters out of 6153662
+ 99863 words of memory out of 5000000
+ 6039 multiletter control sequences out of 15000+600000
  21354 words of font info for 100 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 27i,8n,26p,1168b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,8n,26p,1174b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rinko2017.dvi (9 pages, 35080 bytes).
+Output written on rinko2017.dvi (12 pages, 45748 bytes).
