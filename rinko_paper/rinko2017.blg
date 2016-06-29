@@ -1,19 +1,460 @@
-This is pBibTeX, Version 0.99d-j0.33 (sjis.euc) (TeX Live 2015/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: rinko2017.aux
 The style file: tieice.bst
+is.kanji.str$ is an unknown function---line 150 of file tieice.bst
+is.kanji.str$ is an unknown function---line 151 of file tieice.bst
+is.kanji.str$ is an unknown function---line 152 of file tieice.bst
+is.kanji.str$ is an unknown function---line 267 of file tieice.bst
+is.kanji.str$ is an unknown function---line 293 of file tieice.bst
+is.kanji.str$ is an unknown function---line 302 of file tieice.bst
+is.kanji.str$ is an unknown function---line 339 of file tieice.bst
+is.kanji.str$ is an unknown function---line 346 of file tieice.bst
+is.kanji.str$ is an unknown function---line 363 of file tieice.bst
+is.kanji.str$ is an unknown function---line 368 of file tieice.bst
+is.kanji.str$ is an unknown function---line 454 of file tieice.bst
+is.kanji.str$ is an unknown function---line 464 of file tieice.bst
+is.kanji.str$ is an unknown function---line 484 of file tieice.bst
+is.kanji.str$ is an unknown function---line 490 of file tieice.bst
+is.kanji.str$ is an unknown function---line 507 of file tieice.bst
+is.kanji.str$ is an unknown function---line 595 of file tieice.bst
+is.kanji.str$ is an unknown function---line 606 of file tieice.bst
+is.kanji.str$ is an unknown function---line 608 of file tieice.bst
+is.kanji.str$ is an unknown function---line 671 of file tieice.bst
+is.kanji.str$ is an unknown function---line 682 of file tieice.bst
+is.kanji.str$ is an unknown function---line 693 of file tieice.bst
+is.kanji.str$ is an unknown function---line 708 of file tieice.bst
+is.kanji.str$ is an unknown function---line 718 of file tieice.bst
+is.kanji.str$ is an unknown function---line 723 of file tieice.bst
+is.kanji.str$ is an unknown function---line 747 of file tieice.bst
+is.kanji.str$ is an unknown function---line 752 of file tieice.bst
+is.kanji.str$ is an unknown function---line 772 of file tieice.bst
+is.kanji.str$ is an unknown function---line 799 of file tieice.bst
+is.kanji.str$ is an unknown function---line 817 of file tieice.bst
 Database file #1: zotero.bib
+is.kanji.str$ is an unknown function---line 1248 of file tieice.bst
+is.kanji.str$ is an unknown function---line 1249 of file tieice.bst
+is.kanji.str$ is an unknown function---line 1250 of file tieice.bst
+is.kanji.str$ is an unknown function---line 1251 of file tieice.bst
+is.kanji.str$ is an unknown function---line 1252 of file tieice.bst
+is.kanji.str$ is an unknown function---line 1253 of file tieice.bst
+"Embellishing {Text} {Search} {Queries} to {Protect} {User} {Privacy}" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"Proc. VLDB Endow." is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"Pang, HweeHwa and Ding, Xuhua and Xiao, Xiaokui" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1256 of file tieice.bst
+"A {Face} {Is} {Exposed} for {AOL} {Searcher} {No}. 4417749 - {New} {York} {Times}" is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"M. Barbaro and T. Z. Jr." is a string literal, not an integer, for entry _face_2006
+while executing---line 1256 of file tieice.bst
+"Inverted {Files} for {Text} {Search} {Engines}" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"ACM Comput. Surv." is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"Zobel, Justin and Moffat, Alistair" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1256 of file tieice.bst
+"New constructions and practical applications for private stream searching" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"2006 {IEEE} {Symposium} on {Security} and {Privacy} ({S}\&{P}'06)" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"Bethencourt, John and Song, Dawn and Waters, Brent" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1256 of file tieice.bst
+"Keyword search and oblivious pseudorandom functions" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"Theory of {Cryptography} {Conference}" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"Freedman, Michael J. and Ishai, Yuval and Pinkas, Benny and Reingold, Omer" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1256 of file tieice.bst
+"Public key encryption with keyword search" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"International {Conference} on the {Theory} and {Applications} of {Cryptographic} {Techniques}" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"Boneh, Dan and Di Crescenzo, Giovanni and Ostrovsky, Rafail and Persiano, Giuseppe" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1256 of file tieice.bst
+"Practical techniques for searches on encrypted data" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"Security and {Privacy}, 2000. {S}\&{P} 2000. {Proceedings}. 2000 {IEEE} {Symposium} on" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"Song, Dawn Xiaoding and Wagner, David and Perrig, Adrian" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1256 of file tieice.bst
+"Providing {Privacy} through {Plausibly} {Deniable} {Search}" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"Proceedings of the 2009 {SIAM} {International} {Conference} on {Data} {Mining}" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"Proceedings" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"Murugesan, M. and Clifton, C." is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1256 of file tieice.bst
+"Concept based query expansion" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"Proceedings of the 16th annual international {ACM} {SIGIR} conference on {Research} and development in information retrieval" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"Qiu, Yonggang and Frei, Hans-Peter" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1256 of file tieice.bst
+"Query expansion using local and global document analysis" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"Proceedings of the 19th annual international {ACM} {SIGIR} conference on {Research} and development in information retrieval" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"Xu, Jinxi and Croft, W. Bruce" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1256 of file tieice.bst
+"Dense probabilistic encryption" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"Proceedings of the workshop on selected areas of cryptography" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"Benaloh, Josh" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1256 of file tieice.bst
+"Indexing by latent semantic analysis" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"Journal of the American society for information science" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"Deerwester, Scott and Dumais, Susan T. and Furnas, George W. and Landauer, Thomas K. and Harshman, Richard" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1256 of file tieice.bst
+"{WordNet}: a lexical database for {English}" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"Communications of the ACM" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"Miller, George A." is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1256 of file tieice.bst
+"Overview of the {Patent} {Retrieval} {Task} at the {NTCIR}-6 {Workshop}." is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"{NTCIR}" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"Fujii, Atsushi and Iwayama, Makoto and Kando, Noriko" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1256 of file tieice.bst
+"HweeHwaPang" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"XuhuaDing" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"XiaokuiXiao" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"Pang, HweeHwa and Ding, Xuhua and Xiao, Xiaokui" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"Pang, HweeHwa and Ding, Xuhua and Xiao, Xiaokui" is a string literal, not an integer, for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+, 
+---the literal stack isn't empty for entry pang_embellishing_2010
+while executing---line 1294 of file tieice.bst
+"M.Barbaro" is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"T.~Z.Jr." is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"M. Barbaro and T. Z. Jr." is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"M. Barbaro and T. Z. Jr." is a string literal, not an integer, for entry _face_2006
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry _face_2006
+while executing---line 1294 of file tieice.bst
+"JustinZobel" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"AlistairMoffat" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"Zobel, Justin and Moffat, Alistair" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"Zobel, Justin and Moffat, Alistair" is a string literal, not an integer, for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry zobel_inverted_2006
+while executing---line 1294 of file tieice.bst
+"JohnBethencourt" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"DawnSong" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"BrentWaters" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"Bethencourt, John and Song, Dawn and Waters, Brent" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"Bethencourt, John and Song, Dawn and Waters, Brent" is a string literal, not an integer, for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year
+---the literal stack isn't empty for entry bethencourt_new_2006
+while executing---line 1294 of file tieice.bst
+"Michael~J.Freedman" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"YuvalIshai" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"BennyPinkas" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"OmerReingold" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"Freedman, Michael J. and Ishai, Yuval and Pinkas, Benny and Reingold, Omer" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"Freedman, Michael J. and Ishai, Yuval and Pinkas, Benny and Reingold, Omer" is a string literal, not an integer, for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year, year
+---the literal stack isn't empty for entry freedman_keyword_2005
+while executing---line 1294 of file tieice.bst
+"DanBoneh" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"GiovanniDi~Crescenzo" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"RafailOstrovsky" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"GiuseppePersiano" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"Boneh, Dan and Di Crescenzo, Giovanni and Ostrovsky, Rafail and Persiano, Giuseppe" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"Boneh, Dan and Di Crescenzo, Giovanni and Ostrovsky, Rafail and Persiano, Giuseppe" is a string literal, not an integer, for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year, year
+---the literal stack isn't empty for entry boneh_public_2004
+while executing---line 1294 of file tieice.bst
+"Dawn~XiaodingSong" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"DavidWagner" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"AdrianPerrig" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"Song, Dawn Xiaoding and Wagner, David and Perrig, Adrian" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"Song, Dawn Xiaoding and Wagner, David and Perrig, Adrian" is a string literal, not an integer, for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year
+---the literal stack isn't empty for entry song_practical_2000
+while executing---line 1294 of file tieice.bst
+"M.Murugesan" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"C.Clifton" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"Murugesan, M. and Clifton, C." is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"Murugesan, M. and Clifton, C." is a string literal, not an integer, for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry murugesan_providing_2009
+while executing---line 1294 of file tieice.bst
+"YonggangQiu" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"Hans-PeterFrei" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"Qiu, Yonggang and Frei, Hans-Peter" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"Qiu, Yonggang and Frei, Hans-Peter" is a string literal, not an integer, for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry qiu_concept_1993
+while executing---line 1294 of file tieice.bst
+"JinxiXu" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"W.~BruceCroft" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"Xu, Jinxi and Croft, W. Bruce" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"Xu, Jinxi and Croft, W. Bruce" is a string literal, not an integer, for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry xu_query_1996
+while executing---line 1294 of file tieice.bst
+"JoshBenaloh" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1294 of file tieice.bst
+"Benaloh, Josh" is a string literal, not an integer, for entry benaloh_dense_1994
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry benaloh_dense_1994
+while executing---line 1294 of file tieice.bst
+"ScottDeerwester" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"Susan~T.Dumais" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"George~W.Furnas" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"Thomas~K.Landauer" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"RichardHarshman" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"Deerwester, Scott and Dumais, Susan T. and Furnas, George W. and Landauer, Thomas K. and Harshman, Richard" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"Deerwester, Scott and Dumais, Susan T. and Furnas, George W. and Landauer, Thomas K. and Harshman, Richard" is a string literal, not an integer, for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year, year, year
+---the literal stack isn't empty for entry deerwester_indexing_1990
+while executing---line 1294 of file tieice.bst
+"George~A.Miller" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1294 of file tieice.bst
+"Miller, George A." is a string literal, not an integer, for entry miller_wordnet:_1995
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year
+---the literal stack isn't empty for entry miller_wordnet:_1995
+while executing---line 1294 of file tieice.bst
+"AtsushiFujii" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"MakotoIwayama" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"NorikoKando" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"Fujii, Atsushi and Iwayama, Makoto and Kando, Noriko" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+"Fujii, Atsushi and Iwayama, Makoto and Kando, Noriko" is a string literal, not an integer, for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
+ptr=1, stack=
+year, year
+---the literal stack isn't empty for entry fujii_overview_2007
+while executing---line 1294 of file tieice.bst
 You've used 14 entries,
-            2358 wiz_defined-function locations,
-            633 strings with 6413 characters,
-and the built_in function-call counts, 5373 in all, are:
+            2323 wiz_defined-function locations,
+            632 strings with 6460 characters,
+and the built_in function-call counts, 4974 in all, are:
 = -- 460
 > -- 125
 < -- 11
 + -- 51
 - -- 37
-* -- 261
-:= -- 614
+* -- 223
+:= -- 577
 add.period$ -- 14
 call.type$ -- 14
 change.case$ -- 14
@@ -21,7 +462,7 @@ chr.to.int$ -- 0
 cite$ -- 14
 duplicate$ -- 347
 empty$ -- 576
-format.name$ -- 74
+format.name$ -- 37
 if$ -- 1382
 int.to.chr$ -- 0
 int.to.str$ -- 14
@@ -32,7 +473,7 @@ pop$ -- 129
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 405
+skip$ -- 307
 stack$ -- 0
 substring$ -- 284
 swap$ -- 94
@@ -43,5 +484,5 @@ type$ -- 0
 warning$ -- 0
 while$ -- 45
 width$ -- 16
-write$ -- 133
-is.kanji.str$ -- 175
+write$ -- 119
+(There were 224 error messages)
